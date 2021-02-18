@@ -8,8 +8,16 @@
     "start": "next start"
   },
   "dependencies": {
+    "@google-cloud/bigquery": "^5.5.0",
+    "bulma": "^0.9.1",
     "next": "10.0.4",
+    "pg": "^8.5.1",
+    "pg-hstore": "^2.3.3",
     "react": "17.0.1",
-    "react-dom": "17.0.1"
+    "react-bulma-components": "^3.4.0",
+    "react-dom": "17.0.1",
+    "sass": "^1.32.0",
+    "sqlite": "^4.0.19",
+    "sqlite3": "^5.0.0"
   }
 }
