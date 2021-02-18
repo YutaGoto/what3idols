@@ -62,6 +62,8 @@ const Home = () => {
   return (
     <>
       <Head>
+        <meta property="og:title" content="What3Idols" />
+        <meta property="og:description" content="アイドルを3人選んで位置を特定しましょう！" />
         <title>What3Idols!</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
