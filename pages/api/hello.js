@@ -17,7 +17,7 @@ const hello = async (req, res) => {
 
   const options = {
     query: query,
-    jobTimeoutMs: 2000,
+    jobTimeoutMs: 10000,
   };
 
   const [job] = await bigquery.createQueryJob(options);
