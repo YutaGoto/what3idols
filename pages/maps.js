@@ -5,7 +5,6 @@ import { Container, Section, Content, Columns, Heading, Navbar, Notification, Bu
 import idols from '../utils/idols.json'
 
 const Maps = () => {
-  const [showNotification, setShowNotification] = useState(false)
   const [map, setMap] = useState(null)
   const [content, setContent] = useState('')
   const [center, setCenter] = useState({
