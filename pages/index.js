@@ -12,6 +12,7 @@ const Home = () => {
   const [mapUrl, setMapUrl] = useState("https://maps.google.co.jp/maps?output=embed&q=35.685261046859836,139.75277829434054&z=13")
   const [loading, setLoading] = useState(false)
   const [showNotification, setShowNotification] = useState(false)
+  const [openMenu, setOpenMenu] = useState(false)
   const { Field, Select, Label, Control } = Form
 
   const onChange = (e) => {
@@ -38,7 +39,7 @@ const Home = () => {
       return
     }
     setLoading(true)
-    await fetch('/api/hello', {
+    await fetch('/api/idol2map', {
       method: 'POST',
       body: arrayIdols.join(",")
     }).then((res) => {
@@ -67,13 +68,25 @@ const Home = () => {
         <title>What3Idols!</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Navbar>
+      <Navbar active={openMenu} transparent={false}>
         <Navbar.Brand>
           <Navbar.Item renderAs="a" href="#">
             <Heading>What3Idols</Heading>
           </Navbar.Item>
+          <Navbar.Burger onClick={() => {setOpenMenu(!openMenu)}} />
         </Navbar.Brand>
+        <Navbar.Menu>
+          <Navbar.Container>
+            <Navbar.Item renderAs="a" href="/">
+              <>Idols to Map</>
+            </Navbar.Item>
+            <Navbar.Item renderAs="a" href="/maps">
+              <>Map to Idols</>
+            </Navbar.Item>
+          </Navbar.Container>
+        </Navbar.Menu>
       </Navbar>
+
       <Container>
         <Section>
           { showNotification ?
@@ -125,9 +138,9 @@ const Home = () => {
         </Section>
 
         <Section>
-        <figure className="image is-16by9">
-          {mapUrl ? <iframe className="has-ratio" width="640" height="360" src={mapUrl}></iframe> : null}
-        </figure>
+          <figure className="image is-16by9">
+            {mapUrl ? <iframe className="has-ratio" width="640" height="360" src={mapUrl}></iframe> : null}
+          </figure>
         </Section>
       </Container>
 

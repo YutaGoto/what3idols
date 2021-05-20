@@ -12,6 +12,7 @@ const Maps = () => {
     lat: 35.69575,
     lng: 139.77521,
   })
+  const [openMenu, setOpenMenu] = useState(false)
 
   const initPosition = {
     lat: 35.69575,
@@ -20,7 +21,7 @@ const Maps = () => {
 
   const { isLoaded } = useJsApiLoader({
     id: 'google-map-script',
-    googleMapsApiKey: "AIzaSyAJd8pGi7Ryi-fyrK9kzherrzWgw75gg-E"
+    googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY,
   })
 
   const onLoad = useCallback(function callback(map) {
@@ -62,40 +63,56 @@ const Maps = () => {
   }
 
   const containerStyle = {
-    width: "800px",
-    height: "400px",
-  };
+    width: "100%",
+    height: "60vh",
+  }
 
   return (
     <>
       <Head>
         <meta property="og:title" content="What3Idols" />
-        <meta property="og:description" content="アイドルを3人選んで位置を特定しましょう！" />
-        <title>What3Idols!</title>
+        <meta property="og:description" content="位置を選んでアイドルを見てみましょう！" />
+        <title>What3Idols</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Navbar>
+
+      <Navbar active={openMenu} transparent={false}>
         <Navbar.Brand>
           <Navbar.Item renderAs="a" href="#">
             <Heading>What3Idols</Heading>
           </Navbar.Item>
+          <Navbar.Burger onClick={() => {setOpenMenu(!openMenu)}} />
         </Navbar.Brand>
+        <Navbar.Menu>
+          <Navbar.Container>
+            <Navbar.Item renderAs="a" href="/">
+              <>Idols to Map</>
+            </Navbar.Item>
+            <Navbar.Item renderAs="a" href="/maps">
+              <>Map to Idols</>
+            </Navbar.Item>
+          </Navbar.Container>
+        </Navbar.Menu>
       </Navbar>
+
 
       <Container>
         <Section>
-          {isLoaded ? <GoogleMap
-            mapContainerStyle={containerStyle}
-            zoom={10}
-            center={initPosition}
-            onLoad={onLoad}
-            onUnmount={onUnmount}
-            onClick={onClick}
-          >
-            <InfoWindow
-              position={center}
-            ><p>{content}</p></InfoWindow>
-          </GoogleMap> : <></>}
+          <div width="100%">
+            {isLoaded ? <GoogleMap
+              mapContainerStyle={containerStyle}
+              zoom={10}
+              center={initPosition}
+              onLoad={onLoad}
+              onUnmount={onUnmount}
+              onClick={onClick}
+              className="image is-16by9"
+            >
+              <InfoWindow position={center} onCloseClick={() => {}}>
+                <p>{content}</p>
+              </InfoWindow>
+            </GoogleMap> : <></>}
+          </div>
         </Section>
       </Container>
 
