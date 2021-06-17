@@ -2,26 +2,26 @@ import {BigQuery} from '@google-cloud/bigquery'
 
 const credential = JSON.parse(
   Buffer.from(process.env.GOOGLE_APPLICATION_CREDENTIALS, 'base64').toString()
-);
+)
 
 const bigquery = new BigQuery({
-  projectId: 'imasparql-slack',
+  projectId: process.env.PROJECT_ID,
   credentials: credential,
-});
+})
 
-const hello = async (req, res) => {
+const idol2map = async (req, res) => {
   const idols = req.body
   const query = `select lat, lng
-  from \`imasparql-slack.what3idols.maps\`
+  from \`${process.env.PROJECT_ID}.what3idols.maps\`
   where idols = "${idols}";`
 
   const options = {
     query: query,
     jobTimeoutMs: 10000,
-  };
+  }
 
-  const [job] = await bigquery.createQueryJob(options);
-  const [rows] = await job.getQueryResults();
+  const [job] = await bigquery.createQueryJob(options)
+  const [rows] = await job.getQueryResults()
 
   if (rows.length === 0){
     return res.status(404)
@@ -32,4 +32,4 @@ const hello = async (req, res) => {
   }
 }
 
-export default hello
+export default idol2map
