@@ -1,6 +1,7 @@
 import React, { useState, useCallback } from 'react'
 import { GoogleMap, useJsApiLoader, InfoWindow } from '@react-google-maps/api'
 import Head from 'next/head'
+import Image from 'next/image'
 import { Container, Section, Content, Columns, Heading, Navbar, Notification, Button, Footer, Form } from 'react-bulma-components'
 import idols from '../utils/idols.json'
 
@@ -126,7 +127,7 @@ const Maps = () => {
               </Columns.Column>
               <Columns.Column size={3}>
                 <a href="https://bulma.io">
-                  <img src="/made-with-bulma.png" alt="Made with Bulma" width="256" height="48" />
+                  <Image src="/made-with-bulma.png" alt="Made with Bulma" width={256} height={48} />
                 </a>
               </Columns.Column>
             </Columns>
