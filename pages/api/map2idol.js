@@ -13,8 +13,8 @@ const map2idol = async (req, res) => {
   const latlng = JSON.parse(req.body)
   const query = `select lat, lng, idols
   from \`imasparql-slack.what3idols.maps\`
-  where lat between ${latlng.lat - 0.0113} and ${latlng.lat}
-  and lng between ${latlng.lng - 0.0121} and ${latlng.lng}
+  where lat between ${latlng.lat - 0.0106} and ${latlng.lat}
+  and lng between ${latlng.lng - 0.0117} and ${latlng.lng}
   ;`
 
   const options = {
