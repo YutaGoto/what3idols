@@ -13,7 +13,7 @@
     "@react-google-maps/api": "^2.2.0",
     "bulma": "^0.9.3",
     "next": "^11.0.1",
-    "pg": "^8.5.1",
+    "pg": "^8.6.0",
     "pg-hstore": "^2.3.3",
     "react": "^17.0.2",
     "react-bulma-components": "^4.0.7",
