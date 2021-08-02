@@ -1,5 +1,7 @@
 #!/bin/bash
 
+echo $VERCEL_GIT_COMMIT_REF
+
 # Does the branch name start with "dependabot/"
 if [[ "$VERCEL_GIT_COMMIT_REF" =~ ^(dependabot)/.*$ ]] ; then
   echo "Skipping deploy!"
