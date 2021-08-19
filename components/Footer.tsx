@@ -1,8 +1,8 @@
-import React from "react"
+import React, { VFC } from "react"
 import Image from 'next/image'
 import { Footer as BulmaFooter, Container, Content, Columns } from 'react-bulma-components'
 
-const Footer = () => {
+const Footer: VFC = () => {
   return (
     <BulmaFooter>
       <Container>

@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react'
+import React, { ReactElement, useState, useCallback } from 'react'
 import { GoogleMap, useJsApiLoader, InfoWindow } from '@react-google-maps/api'
 import Head from 'next/head'
 import { Container, Section } from 'react-bulma-components'
@@ -6,7 +6,7 @@ import Header from '../components/Header'
 import Footer from '../components/Footer'
 import idols from '../utils/idols.json'
 
-const Maps = () => {
+const Maps = (): ReactElement  => {
   const [map, setMap] = useState(null)
   const [content, setContent] = useState('')
   const [center, setCenter] = useState({
@@ -79,7 +79,7 @@ const Maps = () => {
 
       <Container>
         <Section>
-          <div width="100%">
+          <div>
             {isLoaded ? <GoogleMap
               mapContainerStyle={containerStyle}
               zoom={10}

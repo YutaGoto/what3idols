@@ -1,8 +1,8 @@
-import React, { useState } from "react"
+import React, { useState, VFC } from "react"
 import { Heading, Navbar } from 'react-bulma-components'
 
-const Header = () => {
-  const [openMenu, setOpenMenu] = useState(false)
+const Header: VFC = () => {
+  const [openMenu, setOpenMenu] = useState<boolean>(false)
 
   return (
       <Navbar active={openMenu} transparent={false}>

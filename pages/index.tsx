@@ -1,11 +1,11 @@
-import React, { useState } from 'react'
+import React, { ReactElement, useState } from 'react'
 import Head from 'next/head'
 import { Container, Section, Columns, Notification, Button, Loader, Form } from 'react-bulma-components'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import idols from '../utils/idols.json'
 
-const Home = () => {
+const Home = (): ReactElement => {
   const [selectedIdols, setSelectedIdols] = useState({
     idol1: "0",
     idol2: "0",
