@@ -1,8 +1,9 @@
 import React, { useState, useCallback } from 'react'
 import { GoogleMap, useJsApiLoader, InfoWindow } from '@react-google-maps/api'
 import Head from 'next/head'
-import Image from 'next/image'
-import { Container, Section, Content, Columns, Heading, Navbar, Notification, Button, Footer, Form } from 'react-bulma-components'
+import { Container, Section } from 'react-bulma-components'
+import Header from '../components/Header'
+import Footer from '../components/Footer'
 import idols from '../utils/idols.json'
 
 const Maps = () => {
@@ -12,7 +13,6 @@ const Maps = () => {
     lat: 35.69575,
     lng: 139.77521,
   })
-  const [openMenu, setOpenMenu] = useState(false)
 
   const initPosition = {
     lat: 35.69575,
@@ -75,26 +75,7 @@ const Maps = () => {
         <title>What3Idols</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
-      <Navbar active={openMenu} transparent={false}>
-        <Navbar.Brand>
-          <Navbar.Item renderAs="a" href="#">
-            <Heading>What3Idols</Heading>
-          </Navbar.Item>
-          <Navbar.Burger onClick={() => {setOpenMenu(!openMenu)}} />
-        </Navbar.Brand>
-        <Navbar.Menu>
-          <Navbar.Container>
-            <Navbar.Item renderAs="a" href="/">
-              <>Idols to Map</>
-            </Navbar.Item>
-            <Navbar.Item renderAs="a" href="/maps">
-              <>Map to Idols</>
-            </Navbar.Item>
-          </Navbar.Container>
-        </Navbar.Menu>
-      </Navbar>
-
+      <Header />
 
       <Container>
         <Section>
@@ -116,24 +97,7 @@ const Maps = () => {
         </Section>
       </Container>
 
-      <Footer>
-        <Container>
-          <Content style={{ textAlign: 'center' }}>
-            <Columns>
-              <Columns.Column size={9}>
-                <p>
-                  <strong>What 3 Idols</strong> by <a href="https://github.com/YutaGoto">Yuta Goto</a>.
-                </p>
-              </Columns.Column>
-              <Columns.Column size={3}>
-                <a href="https://bulma.io">
-                  <Image src="/made-with-bulma.png" alt="Made with Bulma" width={256} height={48} />
-                </a>
-              </Columns.Column>
-            </Columns>
-          </Content>
-        </Container>
-      </Footer>
+      <Footer />
     </>
   )
 }
