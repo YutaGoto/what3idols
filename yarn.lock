@@ -85,10 +85,10 @@
     minimatch "^3.0.4"
     strip-json-comments "^3.1.1"
 
-"@google-cloud/bigquery@^5.7.1":
-  version "5.7.1"
-  resolved "https://registry.yarnpkg.com/@google-cloud/bigquery/-/bigquery-5.7.1.tgz#3d6f3ff34dfc84378def4ed2b813b216ed94a944"
-  integrity sha512-YLs1sLKa2N1RzppI04ZCqUJ0WX9hMHggU/b9bYHqYlrtqXVBMmbqUJNOzKMC7GkiltMNsFav1Zyk5cJ7mfQGwQ==
+"@google-cloud/bigquery@^5.8.0":
+  version "5.8.0"
+  resolved "https://registry.yarnpkg.com/@google-cloud/bigquery/-/bigquery-5.8.0.tgz#076126a5f4d4d3e95405f131f28a5b7c5a71681e"
+  integrity sha512-d4hk8ZcvxAU5WEQBqnhZrIQtC3EnMnw3fMRRV+d/Jt9LADvULPZV/dvd7L2sup8ISSNaW3uWReCMLxEMuy9W7Q==
   dependencies:
     "@google-cloud/common" "^3.1.0"
     "@google-cloud/paginator" "^3.0.0"
