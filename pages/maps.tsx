@@ -6,15 +6,20 @@ import Footer from '../components/Footer'
 import Meta from '../components/Meta'
 import idols from '../utils/idols.json'
 
+interface LatLng {
+  lat: number
+  lng: number
+}
+
 const Maps = (): ReactElement  => {
   const [map, setMap] = useState(null)
-  const [content, setContent] = useState('')
-  const [center, setCenter] = useState({
+  const [content, setContent] = useState<string>('')
+  const [center, setCenter] = useState<LatLng>({
     lat: 35.69575,
     lng: 139.77521,
   })
 
-  const initPosition = {
+  const initPosition: LatLng = {
     lat: 35.69575,
     lng: 139.77521,
   }
@@ -35,7 +40,7 @@ const Maps = (): ReactElement  => {
   }, [])
 
   const onClick = async (e) => {
-    const latLng = e.latLng.toJSON()
+    const latLng: LatLng = e.latLng.toJSON()
     await fetch('/api/map2idol', {
       method: 'POST',
       body: JSON.stringify(latLng)
@@ -75,19 +80,18 @@ const Maps = (): ReactElement  => {
       <Container>
         <Section>
           <div>
-            {isLoaded ? <GoogleMap
+            {isLoaded && <GoogleMap
               mapContainerStyle={containerStyle}
               zoom={10}
               center={initPosition}
               onLoad={onLoad}
               onUnmount={onUnmount}
               onClick={onClick}
-              className="image is-16by9"
             >
               <InfoWindow position={center} onCloseClick={() => {}}>
                 <p>{content}</p>
               </InfoWindow>
-            </GoogleMap> : <></>}
+            </GoogleMap>}
           </div>
         </Section>
       </Container>
