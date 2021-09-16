@@ -1,9 +1,9 @@
 import React, { ReactElement, useState, useCallback } from 'react'
 import { GoogleMap, useJsApiLoader, InfoWindow } from '@react-google-maps/api'
-import Head from 'next/head'
 import { Container, Section } from 'react-bulma-components'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
+import Meta from '../components/Meta'
 import idols from '../utils/idols.json'
 
 const Maps = (): ReactElement  => {
@@ -69,12 +69,7 @@ const Maps = (): ReactElement  => {
 
   return (
     <>
-      <Head>
-        <meta property="og:title" content="What3Idols" />
-        <meta property="og:description" content="位置を選んでアイドルを見てみましょう！" />
-        <title>What3Idols</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+      <Meta description="位置を選んでアイドルを見てみましょう！" />
       <Header />
 
       <Container>
