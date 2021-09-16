@@ -35,7 +35,7 @@ const Maps = (): ReactElement  => {
     setMap(null)
   }, [])
 
-  const onClick = async (e) => {
+  const onClick = async (e: { latLng: { toJSON: () => LatLng } }) => {
     const latLng: LatLng = e.latLng.toJSON()
     await fetch('/api/map2idol', {
       method: 'POST',
