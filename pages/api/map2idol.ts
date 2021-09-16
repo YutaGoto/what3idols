@@ -1,4 +1,5 @@
 import {BigQuery} from '@google-cloud/bigquery'
+import { LatLng } from '../../types/Type'
 
 const credential = JSON.parse(
   Buffer.from(process.env.GOOGLE_APPLICATION_CREDENTIALS, 'base64').toString()
@@ -10,7 +11,7 @@ const bigquery = new BigQuery({
 })
 
 const map2idol = async (req, res) => {
-  const latlng = JSON.parse(req.body)
+  const latlng: LatLng = JSON.parse(req.body)
   const query = `select lat, lng, idols
   from \`${process.env.PROJECT_ID}.what3idols.maps\`
   where lat between ${latlng.lat - 0.0106} and ${latlng.lat}

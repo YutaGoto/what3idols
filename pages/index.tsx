@@ -3,13 +3,8 @@ import { Container, Section, Columns, Notification, Button, Loader, Form } from 
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import Meta from '../components/Meta'
+import { LatLng, SelectedIdols } from '../types/Type'
 import idols from '../utils/idols.json'
-
-interface SelectedIdols {
-  idol1: string
-  idol2: string
-  idol3: string
-}
 
 const { Field, Select, Label, Control } = Form
 
@@ -57,7 +52,7 @@ const Home = (): ReactElement => {
       else
         throw res
     }).then((json) => {
-      const data = json
+      const data = json as LatLng
       if (data == undefined) return
       setMapUrl(`https://maps.google.co.jp/maps?output=embed&q=${data.lat},${data.lng}&z=13`)
     }).catch((err) => {
@@ -75,12 +70,11 @@ const Home = (): ReactElement => {
 
       <Container>
         <Section>
-          { showNotification ?
+          { showNotification &&
             <Notification>
               3人別々のアイドルを選択してください
               <Button remove onClick={onCloseButtonClick} />
             </Notification>
-            : null
           }
           <Columns>
             <Columns.Column>

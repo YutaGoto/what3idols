@@ -4,15 +4,11 @@ import { Container, Section } from 'react-bulma-components'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import Meta from '../components/Meta'
+import { LatLng } from '../types/Type'
 import idols from '../utils/idols.json'
 
-interface LatLng {
-  lat: number
-  lng: number
-}
-
 const Maps = (): ReactElement  => {
-  const [map, setMap] = useState(null)
+  const [, setMap] = useState(null)
   const [content, setContent] = useState<string>('')
   const [center, setCenter] = useState<LatLng>({
     lat: 35.69575,

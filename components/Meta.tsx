@@ -5,7 +5,7 @@ interface Props {
   description: string
 }
 
-const Meta: VFC<Props> = ({description}) => {
+const Meta: VFC<Props> = ({ description }) => {
   return (
     <Head>
       <meta property="og:title" content="What3Idols" />
