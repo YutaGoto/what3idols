@@ -1,20 +1,22 @@
-import React, { useState } from 'react'
-import Head from 'next/head'
+import React, { ReactElement, useState } from 'react'
 import { Container, Section, Columns, Notification, Button, Loader, Form } from 'react-bulma-components'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
+import Meta from '../components/Meta'
+import { LatLng, SelectedIdols } from '../types/Type'
 import idols from '../utils/idols.json'
 
-const Home = () => {
-  const [selectedIdols, setSelectedIdols] = useState({
+const { Field, Select, Label, Control } = Form
+
+const Home = (): ReactElement => {
+  const [selectedIdols, setSelectedIdols] = useState<SelectedIdols>({
     idol1: "0",
     idol2: "0",
     idol3: "0",
   })
-  const [mapUrl, setMapUrl] = useState("https://maps.google.co.jp/maps?output=embed&q=35.685261046859836,139.75277829434054&z=13")
-  const [loading, setLoading] = useState(false)
-  const [showNotification, setShowNotification] = useState(false)
-  const { Field, Select, Label, Control } = Form
+  const [mapUrl, setMapUrl] = useState<string>("https://maps.google.co.jp/maps?output=embed&q=35.685261046859836,139.75277829434054&z=13")
+  const [loading, setLoading] = useState<boolean>(false)
+  const [showNotification, setShowNotification] = useState<boolean>(false)
 
   const onChange = (e) => {
     setSelectedIdols({
@@ -50,7 +52,7 @@ const Home = () => {
       else
         throw res
     }).then((json) => {
-      const data = json
+      const data = json as LatLng
       if (data == undefined) return
       setMapUrl(`https://maps.google.co.jp/maps?output=embed&q=${data.lat},${data.lng}&z=13`)
     }).catch((err) => {
@@ -63,22 +65,16 @@ const Home = () => {
 
   return (
     <>
-      <Head>
-        <meta property="og:title" content="What3Idols" />
-        <meta property="og:description" content="アイドルを3人選んで位置を特定しましょう！" />
-        <title>What3Idols!</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+      <Meta description="アイドルを3人選んで位置を特定しましょう！" />
       <Header />
 
       <Container>
         <Section>
-          { showNotification ?
+          { showNotification &&
             <Notification>
               3人別々のアイドルを選択してください
               <Button remove onClick={onCloseButtonClick} />
             </Notification>
-            : null
           }
           <Columns>
             <Columns.Column>

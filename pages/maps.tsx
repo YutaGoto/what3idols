@@ -1,20 +1,21 @@
-import React, { useState, useCallback } from 'react'
+import React, { ReactElement, useState, useCallback } from 'react'
 import { GoogleMap, useJsApiLoader, InfoWindow } from '@react-google-maps/api'
-import Head from 'next/head'
 import { Container, Section } from 'react-bulma-components'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
+import Meta from '../components/Meta'
+import { LatLng } from '../types/Type'
 import idols from '../utils/idols.json'
 
-const Maps = () => {
-  const [map, setMap] = useState(null)
-  const [content, setContent] = useState('')
-  const [center, setCenter] = useState({
+const Maps = (): ReactElement  => {
+  const [, setMap] = useState(null)
+  const [content, setContent] = useState<string>('')
+  const [center, setCenter] = useState<LatLng>({
     lat: 35.69575,
     lng: 139.77521,
   })
 
-  const initPosition = {
+  const initPosition: LatLng = {
     lat: 35.69575,
     lng: 139.77521,
   }
@@ -35,7 +36,7 @@ const Maps = () => {
   }, [])
 
   const onClick = async (e) => {
-    const latLng = e.latLng.toJSON()
+    const latLng: LatLng = e.latLng.toJSON()
     await fetch('/api/map2idol', {
       method: 'POST',
       body: JSON.stringify(latLng)
@@ -69,30 +70,24 @@ const Maps = () => {
 
   return (
     <>
-      <Head>
-        <meta property="og:title" content="What3Idols" />
-        <meta property="og:description" content="位置を選んでアイドルを見てみましょう！" />
-        <title>What3Idols</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+      <Meta description="位置を選んでアイドルを見てみましょう！" />
       <Header />
 
       <Container>
         <Section>
-          <div width="100%">
-            {isLoaded ? <GoogleMap
+          <div>
+            {isLoaded && <GoogleMap
               mapContainerStyle={containerStyle}
               zoom={10}
               center={initPosition}
               onLoad={onLoad}
               onUnmount={onUnmount}
               onClick={onClick}
-              className="image is-16by9"
             >
               <InfoWindow position={center} onCloseClick={() => {}}>
                 <p>{content}</p>
               </InfoWindow>
-            </GoogleMap> : <></>}
+            </GoogleMap>}
           </div>
         </Section>
       </Container>
