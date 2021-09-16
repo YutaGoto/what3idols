@@ -1,4 +1,4 @@
-import {BigQuery} from '@google-cloud/bigquery'
+import { BigQuery } from '@google-cloud/bigquery'
 
 const credential = JSON.parse(
   Buffer.from(process.env.GOOGLE_APPLICATION_CREDENTIALS, 'base64').toString()
