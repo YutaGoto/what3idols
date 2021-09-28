@@ -1,0 +1,39 @@
+version: 2.1
+
+orbs:
+  node: circleci/node@4.7
+  slack: circleci/slack@4.4.2
+
+jobs:
+  deploy:
+    working_directory: ~/what3idols
+    docker:
+      - image: circleci/node:latest
+    steps:
+      - checkout
+      - run:
+          name: package install
+          command: yarn install
+      - run:
+          name: deploy
+          command: yarn deploy
+      - slack/notify:
+          event: fail
+          template: basic_fail_1
+      - slack/notify:
+          event: pass
+          template: basic_success_1
+
+
+workflows:
+  version: 2
+  main:
+    jobs:
+      - deploy:
+          context:
+            - slack
+          filters:
+            branches:
+              only:
+                - main
+
