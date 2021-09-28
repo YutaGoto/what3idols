@@ -32,3 +32,8 @@ workflows:
       - deploy:
           context:
             - slack
+          filters:
+            branches:
+              only:
+                - main
+
