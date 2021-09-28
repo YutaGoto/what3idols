@@ -6,6 +6,7 @@ orbs:
 
 jobs:
   deploy:
+    working_directory: ~/what3idols
     docker:
       - image: circleci/node:latest
     steps:
