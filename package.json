@@ -1,5 +1,5 @@
 {
-  "name": "what3idols-next",
+  "name": "what3idols",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "deploy": "vercel --token $VERCEL_TOKEN --prod"
+    "deploy": "vercel --token $VERCEL_TOKEN --prod --confirm"
   },
   "dependencies": {
     "@google-cloud/bigquery": "^5.9.0",
