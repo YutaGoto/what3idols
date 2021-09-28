@@ -6,14 +6,16 @@ orbs:
 
 jobs:
   deploy:
-    executor: node/default
+    docker:
+      - image: circleci/node:latest
     steps:
       - checkout
-      - node/install:
-          install-yarn: true
-      - node/install-packages:
-          override-ci-command: yarn install
-      - run: yarn deploy
+      - run:
+          name: package install
+          command: yarn install
+      - run:
+          name: deploy
+          command: yarn deploy
       - slack/notify:
           event: fail
           template: basic_fail_1
