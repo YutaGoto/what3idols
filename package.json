@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "@google-cloud/bigquery": "^5.9.0",
-    "@react-google-maps/api": "^2.4.0",
+    "@react-google-maps/api": "^2.4.1",
     "bulma": "^0.9.3",
     "next": "^11.1.2",
     "react": "^17.0.2",

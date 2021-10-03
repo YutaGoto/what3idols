@@ -128,10 +128,10 @@
   resolved "https://registry.yarnpkg.com/@google-cloud/promisify/-/promisify-2.0.3.tgz#f934b5cdc939e3c7039ff62b9caaf59a9d89e3a8"
   integrity sha512-d4VSA86eL/AFTe5xtyZX+ePUjE8dIFu2T8zmdeNBSa5/kNgXPCx/o/wbFNHAGLJdGnk1vddRuMESD9HbOC8irw==
 
-"@googlemaps/js-api-loader@1.12.3":
-  version "1.12.3"
-  resolved "https://registry.yarnpkg.com/@googlemaps/js-api-loader/-/js-api-loader-1.12.3.tgz#fb329f750399850d6a938a2c02b703b3a22fea47"
-  integrity sha512-u+MA+iZ2863YgugRRJH2EgI6exUIFq9yC7QEOj2VZkWE9d/FR4QmxNW5zaJBu4scglkI9O+E6yByj+7d06N7Sg==
+"@googlemaps/js-api-loader@1.12.4":
+  version "1.12.4"
+  resolved "https://registry.yarnpkg.com/@googlemaps/js-api-loader/-/js-api-loader-1.12.4.tgz#9248ed6ca3ab5055158b2ea1d7eabd54251849ab"
+  integrity sha512-CG2ldySYFP+Pf6ymtAp9fUQGltEdOJCv2+LEiQjVZySqSN9QhqVbIFdFDKOu6cirqXXvpVcKYYLsg/K1H8XN0Q==
   dependencies:
     fast-deep-equal "^3.1.3"
 
@@ -261,12 +261,12 @@
     "@nodelib/fs.scandir" "2.1.5"
     fastq "^1.6.0"
 
-"@react-google-maps/api@^2.4.0":
-  version "2.4.0"
-  resolved "https://registry.yarnpkg.com/@react-google-maps/api/-/api-2.4.0.tgz#0656533fc1bfd135d459bd831224f135aefd4df2"
-  integrity sha512-NZ/bCUWBnGMxdJnibzkqdCPHVplJr1dFQmVUzpJ0H85Yg3xKlk9JEx8VAW6pPLnm72MhqK3wEkPk8ZnkCofF0g==
+"@react-google-maps/api@^2.4.1":
+  version "2.4.1"
+  resolved "https://registry.yarnpkg.com/@react-google-maps/api/-/api-2.4.1.tgz#d64208da882c26eb5712b7b2e7f8f2098de5e893"
+  integrity sha512-uGB9QLlZSQxxB9/iu5cWVpmub97PQOypfDnow1cACU49BTUEB7s7/3/A30IR9WxVx3TP+CbYYuGDmKkwhYTJMg==
   dependencies:
-    "@googlemaps/js-api-loader" "1.12.3"
+    "@googlemaps/js-api-loader" "1.12.4"
     "@react-google-maps/infobox" "2.4.0"
     "@react-google-maps/marker-clusterer" "2.4.0"
     "@types/google.maps" "3.45.6"
