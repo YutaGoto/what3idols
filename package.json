@@ -21,7 +21,7 @@
   },
   "devDependencies": {
     "@types/google.maps": "^3.45.6",
-    "@types/node": "^16.10.3",
+    "@types/node": "^16.10.9",
     "@types/react": "^17.0.27",
     "eslint": "^7.32.0",
     "eslint-config-next": "^11.1.2",
