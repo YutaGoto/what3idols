@@ -5,6 +5,18 @@ orbs:
   slack: circleci/slack@4.4.2
 
 jobs:
+  lint:
+    working_directory: ~/what3idols
+    docker:
+      - image: circleci/node:latest
+    steps:
+      - checkout
+      - run:
+          name: package install
+          command: yarn install
+      - run:
+          name: lint
+          command: yarn lint
   deploy:
     working_directory: ~/what3idols
     docker:
@@ -24,16 +36,17 @@ jobs:
           event: pass
           template: basic_success_1
 
-
 workflows:
   version: 2
   main:
     jobs:
+      - lint
       - deploy:
           context:
             - slack
+          requires:
+            - lint
           filters:
             branches:
               only:
                 - main
-
