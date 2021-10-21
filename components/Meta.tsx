@@ -11,7 +11,7 @@ const Meta: VFC<Props> = ({ description }) => {
       <meta property="og:title" content="What3Idols" />
       <meta property="og:description" content={description} />
       <title>What3Idols!</title>
-      <link rel="icon" href="/favicon.ico" />
+      <link rel="icon" type="image/png" href="/favicon.png" />
     </Head>
   )
 }
