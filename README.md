@@ -4,6 +4,8 @@
 
 ![Vercel](http://therealsujitk-vercel-badge.vercel.app/?app=what3idols)
 
+![what3idols](./public/logo.png)
+
 ## Getting Started
 
 Set environment variables:
