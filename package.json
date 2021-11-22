@@ -20,7 +20,7 @@
     "sass": "^1.43.4"
   },
   "devDependencies": {
-    "@types/google.maps": "^3.46.1",
+    "@types/google.maps": "^3.47.0",
     "@types/node": "^16.11.9",
     "@types/react": "^17.0.35",
     "eslint": "^7.32.0",
