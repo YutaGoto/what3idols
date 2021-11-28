@@ -17,6 +17,7 @@ const Home = (): ReactElement => {
   const [mapUrl, setMapUrl] = useState<string>("https://maps.google.co.jp/maps?output=embed&q=35.685261046859836,139.75277829434054&z=13")
   const [loading, setLoading] = useState<boolean>(false)
   const [showNotification, setShowNotification] = useState<boolean>(false)
+  const [showErrorNotification, setShowErrorNotification] = useState<boolean>(false)
 
   const onChange = (e) => {
     setSelectedIdols({
@@ -57,11 +58,15 @@ const Home = (): ReactElement => {
       setMapUrl(`https://maps.google.co.jp/maps?output=embed&q=${data.lat},${data.lng}&z=13`)
     }).catch((err) => {
       console.log(err)
+      setShowErrorNotification(true)
       setLoading(false)
     })
   }
 
-  const onCloseButtonClick = () => setShowNotification(false)
+  const onCloseButtonClick = () => {
+    setShowNotification(false)
+    setShowErrorNotification(false)
+  }
 
   return (
     <>
@@ -71,8 +76,14 @@ const Home = (): ReactElement => {
       <Container>
         <Section>
           { showNotification &&
-            <Notification>
+            <Notification color="warning">
               3人別々のアイドルを選択してください
+              <Button remove onClick={onCloseButtonClick} />
+            </Notification>
+          }
+          { showErrorNotification &&
+            <Notification color="danger">
+              エラーが発生しました
               <Button remove onClick={onCloseButtonClick} />
             </Notification>
           }
