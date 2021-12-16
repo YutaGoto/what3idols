@@ -78,7 +78,7 @@ const Home = (): ReactElement => {
     })
   }
 
-  const onCloseButtonClick = () => {
+  const onNotificationClose = () => {
     setNotification({...notification, show: false})
   }
 
@@ -92,7 +92,7 @@ const Home = (): ReactElement => {
           { notification.show &&
             <Notification color={notification.type}>
               {notification.body}
-              <Button remove onClick={onCloseButtonClick} />
+              <Button remove onClick={onNotificationClose} />
             </Notification>
           }
           <Columns>
