@@ -1,9 +1,9 @@
-import React, { ReactElement, useState } from 'react'
+import React, { ChangeEvent, ReactElement, useState } from 'react'
 import { Container, Section, Columns, Notification, Button, Loader, Form } from 'react-bulma-components'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import Meta from '../components/Meta'
-import { LatLng, SelectedIdols } from '../types/Type'
+import { LatLng, SelectedIdols, NotificationToast } from '../types/Type'
 import idols from '../utils/idols.json'
 
 const { Field, Select, Label, Control } = Form
@@ -16,17 +16,20 @@ const Home = (): ReactElement => {
   })
   const [mapUrl, setMapUrl] = useState<string>("https://maps.google.co.jp/maps?output=embed&q=35.685261046859836,139.75277829434054&z=13")
   const [loading, setLoading] = useState<boolean>(false)
-  const [showNotification, setShowNotification] = useState<boolean>(false)
-  const [showErrorNotification, setShowErrorNotification] = useState<boolean>(false)
+  const [notification, setNotification] = useState<NotificationToast>({
+    show: false,
+    type: 'text',
+    body: '',
+  })
 
-  const onChange = (e) => {
+  const onChange = (e: ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     setSelectedIdols({
       ...selectedIdols, [e.target.name]: e.target.value
     })
   }
 
-  const onClick = async () =>{
-    setShowNotification(false)
+  const onSubmitIdols = async () =>{
+    setNotification({...notification, show: false})
     const arrayIdols = [parseInt(selectedIdols.idol1), parseInt(selectedIdols.idol2), parseInt(selectedIdols.idol3)].sort((a, b) => {
       if (a>b) return 1
       if (a<b) return -1
@@ -34,12 +37,20 @@ const Home = (): ReactElement => {
     })
 
     if (arrayIdols[0] == arrayIdols[1] || arrayIdols[1] == arrayIdols[2]) {
-      setShowNotification(true)
+      setNotification({
+        show: true,
+        type: "warning",
+        body: "3人別々のアイドルを選択してください",
+      })
       return
     }
 
     if (arrayIdols.includes(0)) {
-      setShowNotification(true)
+      setNotification({
+        show: true,
+        type: "warning",
+        body: "アイドルを選択してください",
+      })
       return
     }
     setLoading(true)
@@ -57,33 +68,30 @@ const Home = (): ReactElement => {
       if (data == undefined) return
       setMapUrl(`https://maps.google.co.jp/maps?output=embed&q=${data.lat},${data.lng}&z=13`)
     }).catch((err) => {
-      console.log(err)
-      setShowErrorNotification(true)
+      console.error(err)
+      setNotification({
+        show: true,
+        type: "danger",
+        body: "エラーが発生しました",
+      })
       setLoading(false)
     })
   }
 
   const onCloseButtonClick = () => {
-    setShowNotification(false)
-    setShowErrorNotification(false)
+    setNotification({...notification, show: false})
   }
 
   return (
     <>
-      <Meta description="アイドルを3人選んで位置を特定しましょう！" />
+      <Meta description="アイドルを3人選んで位置を特定しましょう" />
       <Header />
 
       <Container>
         <Section>
-          { showNotification &&
-            <Notification color="warning">
-              3人別々のアイドルを選択してください
-              <Button remove onClick={onCloseButtonClick} />
-            </Notification>
-          }
-          { showErrorNotification &&
-            <Notification color="danger">
-              エラーが発生しました
+          { notification.show &&
+            <Notification color={notification.type}>
+              {notification.body}
               <Button remove onClick={onCloseButtonClick} />
             </Notification>
           }
@@ -123,7 +131,7 @@ const Home = (): ReactElement => {
           </Columns>
 
           <Button.Group>
-            <Button color="primary" onClick={onClick} >What3Idols!!!</Button>
+            <Button color="primary" onClick={onSubmitIdols} disabled={loading} >What3Idols!!!</Button>
             { loading ? <Loader /> : null }
           </Button.Group>
         </Section>
