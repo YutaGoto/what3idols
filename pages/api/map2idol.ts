@@ -27,7 +27,7 @@ const map2idol = async (req, res) => {
   const [rows] = await job.getQueryResults()
 
   if (rows.length === 0){
-    return res.status(404)
+    return res.status(404).json({ error: 'データが見つかりませんでした' })
   } else if (rows.length > 0){
     return res.status(200).json(rows[0])
   } else {
