@@ -1,10 +1,10 @@
 import React, { ReactElement, useState, useCallback } from 'react'
 import { GoogleMap, useJsApiLoader, InfoWindow } from '@react-google-maps/api'
-import { Container, Section } from 'react-bulma-components'
+import { Button, Container, Notification, Section } from 'react-bulma-components'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import Meta from '../components/Meta'
-import { LatLng } from '../types/Type'
+import { LatLng, NotificationToast } from '../types/Type'
 import idols from '../utils/idols.json'
 
 const Maps = (): ReactElement  => {
@@ -14,6 +14,12 @@ const Maps = (): ReactElement  => {
     lat: 35.69575,
     lng: 139.77521,
   })
+  const [notification, setNotification] = useState<NotificationToast>({
+    show: false,
+    type: 'text',
+    body: '',
+  })
+
 
   const initPosition: LatLng = {
     lat: 35.69575,
@@ -36,6 +42,7 @@ const Maps = (): ReactElement  => {
   }, [])
 
   const onClick = async (e: { latLng: { toJSON: () => LatLng } }) => {
+    setNotification({...notification, show: false})
     const latLng: LatLng = e.latLng.toJSON()
     await fetch('/api/map2idol', {
       method: 'POST',
@@ -59,7 +66,13 @@ const Maps = (): ReactElement  => {
         lng: latLng.lng
       })
     }).catch((err) => {
-      console.log(err)
+      console.error(err)
+      setNotification({
+        show: true,
+        type: "danger",
+        body: "エラーが発生しました",
+      })
+      return
     })
   }
 
@@ -68,13 +81,24 @@ const Maps = (): ReactElement  => {
     height: "60vh",
   }
 
+  const onNotificationClose = () => {
+    setNotification({...notification, show: false})
+  }
+
   return (
     <>
-      <Meta description="位置を選んでアイドルを見てみましょう！" />
+      <Meta description="位置を選んでアイドルを見てみましょう" />
       <Header />
 
       <Container>
         <Section>
+          { notification.show &&
+            <Notification color={notification.type}>
+              {notification.body}
+              <Button remove onClick={onNotificationClose} />
+            </Notification>
+          }
+
           <div>
             {isLoaded && <GoogleMap
               mapContainerStyle={containerStyle}

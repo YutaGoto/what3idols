@@ -8,3 +8,9 @@ export interface SelectedIdols {
   idol2: string
   idol3: string
 }
+
+export interface NotificationToast {
+  show: boolean
+  type: 'primary' | 'link' | 'info' | 'success' | 'warning' | 'danger' | 'dark' | 'text'
+  body: string
+}
