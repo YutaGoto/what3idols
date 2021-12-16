@@ -100,7 +100,7 @@ const Home = (): ReactElement => {
               <Field>
                 <Label>アイドル</Label>
                 <Control>
-                  <Select onChange={onChange} value={selectedIdols.idol1} name="idol1" >
+                  <Select onChange={onChange} value={selectedIdols.idol1} color="info" name="idol1" >
                     {idols.idols.map( idol => <option key={idol.id} value={idol.id}>{idol.label}</option>)}
                   </Select>
                 </Control>
@@ -111,7 +111,7 @@ const Home = (): ReactElement => {
               <Field>
                 <Label>アイドル</Label>
                 <Control>
-                  <Select onChange={onChange} value={selectedIdols.idol2} name="idol2" >
+                  <Select onChange={onChange} value={selectedIdols.idol2} color="info" name="idol2" >
                     {idols.idols.map( idol => <option key={idol.id} value={idol.id}>{idol.label}</option>)}
                   </Select>
                 </Control>
@@ -122,7 +122,7 @@ const Home = (): ReactElement => {
               <Field>
                 <Label>アイドル</Label>
                 <Control>
-                  <Select onChange={onChange} value={selectedIdols.idol3} name="idol3" >
+                  <Select onChange={onChange} value={selectedIdols.idol3} color="info" name="idol3" >
                     {idols.idols.map( idol => <option key={idol.id} value={idol.id}>{idol.label}</option>)}
                   </Select>
                 </Control>
@@ -131,7 +131,7 @@ const Home = (): ReactElement => {
           </Columns>
 
           <Button.Group>
-            <Button color="primary" onClick={onSubmitIdols} disabled={loading} >What3Idols!!!</Button>
+            <Button color="primary" onClick={onSubmitIdols} disabled={loading} className="has-text-white">What3Idols!!!</Button>
             { loading ? <Loader /> : null }
           </Button.Group>
         </Section>
