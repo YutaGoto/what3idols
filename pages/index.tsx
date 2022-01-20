@@ -1,12 +1,8 @@
 import React, { ChangeEvent, ReactElement, useState } from 'react'
-import { Container, Section, Columns, Notification, Button, Loader, Form } from 'react-bulma-components'
-import Header from '../components/Header'
-import Footer from '../components/Footer'
-import Meta from '../components/Meta'
+import { Button, Notification } from 'react-bulma-components'
+import {Meta, Layout} from '../components'
+import Main from '../components/pages/Main'
 import { LatLng, SelectedIdols, NotificationToast } from '../types/Type'
-import idols from '../utils/idols.json'
-
-const { Field, Select, Label, Control } = Form
 
 const Home = (): ReactElement => {
   const [selectedIdols, setSelectedIdols] = useState<SelectedIdols>({
@@ -85,65 +81,21 @@ const Home = (): ReactElement => {
   return (
     <>
       <Meta description="アイドルを3人選んで位置を特定しましょう" />
-      <Header />
-
-      <Container>
-        <Section>
-          { notification.show &&
-            <Notification color={notification.type}>
-              {notification.body}
-              <Button remove onClick={onNotificationClose} />
-            </Notification>
-          }
-          <Columns>
-            <Columns.Column>
-              <Field>
-                <Label>アイドル</Label>
-                <Control>
-                  <Select onChange={onChange} value={selectedIdols.idol1} color="info" name="idol1" >
-                    {idols.idols.map( idol => <option key={idol.id} value={idol.id}>{idol.label}</option>)}
-                  </Select>
-                </Control>
-              </Field>
-            </Columns.Column>
-
-            <Columns.Column>
-              <Field>
-                <Label>アイドル</Label>
-                <Control>
-                  <Select onChange={onChange} value={selectedIdols.idol2} color="info" name="idol2" >
-                    {idols.idols.map( idol => <option key={idol.id} value={idol.id}>{idol.label}</option>)}
-                  </Select>
-                </Control>
-              </Field>
-            </Columns.Column>
-
-            <Columns.Column>
-              <Field>
-                <Label>アイドル</Label>
-                <Control>
-                  <Select onChange={onChange} value={selectedIdols.idol3} color="info" name="idol3" >
-                    {idols.idols.map( idol => <option key={idol.id} value={idol.id}>{idol.label}</option>)}
-                  </Select>
-                </Control>
-              </Field>
-            </Columns.Column>
-          </Columns>
-
-          <Button.Group>
-            <Button color="primary" onClick={onSubmitIdols} disabled={loading} className="has-text-white">What3Idols!!!</Button>
-            { loading ? <Loader /> : null }
-          </Button.Group>
-        </Section>
-
-        <Section>
-          <figure className="image is-16by9">
-            {mapUrl ? <iframe className="has-ratio" width="640" height="360" src={mapUrl}></iframe> : null}
-          </figure>
-        </Section>
-      </Container>
-
-      <Footer />
+      <Layout>
+        {notification.show &&
+          <Notification color={notification.type}>
+            {notification.body}
+            <Button remove onClick={onNotificationClose} />
+          </Notification>
+        }
+        <Main
+          mapUrl={mapUrl}
+          loading={loading}
+          selectedIdols={selectedIdols}
+          onChange={onChange}
+          onSubmitIdols={onSubmitIdols}
+        />
+      </Layout>
     </>
   )
 }

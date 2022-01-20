@@ -1,9 +1,8 @@
 import React, { ReactElement, useState, useCallback } from 'react'
-import { GoogleMap, useJsApiLoader, InfoWindow } from '@react-google-maps/api'
-import { Button, Container, Notification, Section } from 'react-bulma-components'
-import Header from '../components/Header'
-import Footer from '../components/Footer'
-import Meta from '../components/Meta'
+import { useJsApiLoader } from '@react-google-maps/api'
+import { Button, Notification } from 'react-bulma-components'
+import { Layout, Meta } from '../components'
+import MapsComponent from '../components/pages/Maps'
 import { LatLng, NotificationToast } from '../types/Type'
 import idols from '../utils/idols.json'
 
@@ -76,11 +75,6 @@ const Maps = (): ReactElement  => {
     })
   }
 
-  const containerStyle = {
-    width: "100%",
-    height: "60vh",
-  }
-
   const onNotificationClose = () => {
     setNotification({...notification, show: false})
   }
@@ -88,35 +82,24 @@ const Maps = (): ReactElement  => {
   return (
     <>
       <Meta description="位置を選んでアイドルを見てみましょう" />
-      <Header />
+      <Layout>
+        {notification.show &&
+          <Notification color={notification.type}>
+            {notification.body}
+            <Button remove onClick={onNotificationClose} />
+          </Notification>
+        }
 
-      <Container>
-        <Section>
-          { notification.show &&
-            <Notification color={notification.type}>
-              {notification.body}
-              <Button remove onClick={onNotificationClose} />
-            </Notification>
-          }
-
-          <div>
-            {isLoaded && <GoogleMap
-              mapContainerStyle={containerStyle}
-              zoom={10}
-              center={initPosition}
-              onLoad={onLoad}
-              onUnmount={onUnmount}
-              onClick={onClick}
-            >
-              <InfoWindow position={center} onCloseClick={() => {}}>
-                <p>{content}</p>
-              </InfoWindow>
-            </GoogleMap>}
-          </div>
-        </Section>
-      </Container>
-
-      <Footer />
+        <MapsComponent
+          isLoaded={isLoaded}
+          initPosition={initPosition}
+          onLoad={onLoad}
+          onUnmount={onUnmount}
+          onClick={onClick}
+          center={center}
+          content={content}
+        />
+      </Layout>
     </>
   )
 }
