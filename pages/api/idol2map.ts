@@ -1,4 +1,5 @@
 import { BigQuery } from '@google-cloud/bigquery'
+import type { NextApiRequest, NextApiResponse } from 'next'
 
 const credential = JSON.parse(
   Buffer.from(process.env.GOOGLE_APPLICATION_CREDENTIALS, 'base64').toString()
@@ -9,7 +10,7 @@ const bigquery = new BigQuery({
   credentials: credential,
 })
 
-const idol2map = async (req, res) => {
+const idol2map = async (req: NextApiRequest, res: NextApiResponse) => {
   const idols = req.body
   const query = `select lat, lng
   from \`${process.env.PROJECT_ID}.what3idols.maps\`
