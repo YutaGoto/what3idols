@@ -37,4 +37,4 @@ yarn-error.log*
 tmp/
 
 # yarn cache file
-.yarn
+.yarn/cache
