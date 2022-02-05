@@ -36,5 +36,11 @@ yarn-error.log*
 # tmpfile
 tmp/
 
-# yarn cache file
-.yarn/cache
+# yarn3 with Zero-install
+.yarn/*
+!.yarn/cache
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
