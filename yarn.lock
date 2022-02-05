@@ -3505,9 +3505,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-bulma-components@npm:^4.0.7":
-  version: 4.0.7
-  resolution: "react-bulma-components@npm:4.0.7"
+"react-bulma-components@npm:^4.1.0":
+  version: 4.1.0
+  resolution: "react-bulma-components@npm:4.1.0"
   dependencies:
     classnames: 2.3.1
   peerDependencies:
@@ -3515,7 +3515,7 @@ __metadata:
     prop-types: ">=15.6.0"
     react: ">=16.3.0"
     react-dom: ">=16.3.0"
-  checksum: 4d6be97cfed616fbb1809cbaf9e8b3d09adc9eeafefbda96ead49315008246ec416f7c1f33311d1fa171d6ba529a5cf2cdac4fc08e7e42b415891277717eaa13
+  checksum: 7d0165d60d157c31a08c262da5fcf1c2cc2553548ef57199693dcfcc94caf236cf4489b6acbcd0292e75f146fdf3d0545ba90ca8efeb447577ce7b5ae673ddc7
   languageName: node
   linkType: hard
 
@@ -4395,7 +4395,7 @@ __metadata:
     eslint-config-next: ^12.0.9
     next: ^12.0.9
     react: ^17.0.2
-    react-bulma-components: ^4.0.7
+    react-bulma-components: ^4.1.0
     react-dom: ^17.0.2
     sass: ^1.49.0
     typescript: ^4.5.5
