@@ -11,9 +11,10 @@ jobs:
       - image: circleci/node:latest
     steps:
       - checkout
-      - run:
-          name: package install
-          command: yarn install
+      - node/install-packages:
+          check-cache: always
+          pkg-manager: yarn-berry
+          with-cache: false
       - run:
           name: lint
           command: yarn lint
@@ -23,9 +24,10 @@ jobs:
       - image: circleci/node:latest
     steps:
       - checkout
-      - run:
-          name: package install
-          command: yarn install
+      - node/install-packages:
+          check-cache: always
+          pkg-manager: yarn-berry
+          with-cache: false
       - run:
           name: deploy
           command: yarn deploy
