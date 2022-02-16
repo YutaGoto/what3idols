@@ -38,6 +38,9 @@ const MapsComponent: NextComponentType<NextPageContext, null, MapsProps> = ({
             onLoad={onLoad}
             onUnmount={onUnmount}
             onClick={onClick}
+            options={{
+              mapId: process.env.GOOGLE_MAPS_MAP_ID
+            }}
           >
             <InfoWindow position={center} onCloseClick={() => {}}>
               <p>{content}</p>
