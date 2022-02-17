@@ -35,7 +35,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         [null, {
           "packageLocation": "./",
           "packageDependencies": [
-            ["@google-cloud/bigquery", "npm:5.10.0"],
+            ["@google-cloud/bigquery", "npm:5.11.0"],
             ["@react-google-maps/api", "virtual:843c93d1bf6b29d6441682c3e31490dff07e342be3bac5a39e7bea08cdfdc62d73e32af1135aa4c3b7560f44ef8be7598301febe357bbeac12cedc86f7c0495a#npm:2.7.0"],
             ["@types/google.maps", "npm:3.47.4"],
             ["@types/node", "npm:17.0.13"],
@@ -111,11 +111,11 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["@google-cloud/bigquery", [
-        ["npm:5.10.0", {
-          "packageLocation": "./.yarn/cache/@google-cloud-bigquery-npm-5.10.0-239d951241-79110add93.zip/node_modules/@google-cloud/bigquery/",
+        ["npm:5.11.0", {
+          "packageLocation": "./.yarn/cache/@google-cloud-bigquery-npm-5.11.0-6c4c1130c0-d4963bd038.zip/node_modules/@google-cloud/bigquery/",
           "packageDependencies": [
-            ["@google-cloud/bigquery", "npm:5.10.0"],
-            ["@google-cloud/common", "npm:3.6.0"],
+            ["@google-cloud/bigquery", "npm:5.11.0"],
+            ["@google-cloud/common", "npm:3.9.0"],
             ["@google-cloud/paginator", "npm:3.0.5"],
             ["@google-cloud/promisify", "npm:2.0.3"],
             ["arrify", "npm:2.0.1"],
@@ -124,6 +124,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["extend", "npm:3.0.2"],
             ["is", "npm:3.3.0"],
             ["p-event", "npm:4.2.0"],
+            ["readable-stream", "npm:3.6.0"],
             ["stream-events", "npm:1.0.5"],
             ["uuid", "npm:8.3.2"]
           ],
@@ -131,18 +132,18 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["@google-cloud/common", [
-        ["npm:3.6.0", {
-          "packageLocation": "./.yarn/cache/@google-cloud-common-npm-3.6.0-6ab97d5069-ba951066d0.zip/node_modules/@google-cloud/common/",
+        ["npm:3.9.0", {
+          "packageLocation": "./.yarn/cache/@google-cloud-common-npm-3.9.0-4ebb96c5bb-7e6fddcbfc.zip/node_modules/@google-cloud/common/",
           "packageDependencies": [
-            ["@google-cloud/common", "npm:3.6.0"],
+            ["@google-cloud/common", "npm:3.9.0"],
             ["@google-cloud/projectify", "npm:2.0.1"],
             ["@google-cloud/promisify", "npm:2.0.3"],
             ["arrify", "npm:2.0.1"],
             ["duplexify", "npm:4.1.1"],
             ["ent", "npm:2.2.0"],
             ["extend", "npm:3.0.2"],
-            ["google-auth-library", "npm:7.0.2"],
-            ["retry-request", "npm:4.1.3"],
+            ["google-auth-library", "npm:7.12.0"],
+            ["retry-request", "npm:4.2.2"],
             ["teeny-request", "npm:7.0.1"]
           ],
           "linkType": "HARD",
@@ -2540,10 +2541,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["google-auth-library", [
-        ["npm:7.0.2", {
-          "packageLocation": "./.yarn/cache/google-auth-library-npm-7.0.2-b03343febd-032d934891.zip/node_modules/google-auth-library/",
+        ["npm:7.12.0", {
+          "packageLocation": "./.yarn/cache/google-auth-library-npm-7.12.0-7398904cc4-0c2970ca9b.zip/node_modules/google-auth-library/",
           "packageDependencies": [
-            ["google-auth-library", "npm:7.0.2"],
+            ["google-auth-library", "npm:7.12.0"],
             ["arrify", "npm:2.0.1"],
             ["base64-js", "npm:1.5.1"],
             ["ecdsa-sig-formatter", "npm:1.0.11"],
@@ -4398,11 +4399,12 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["retry-request", [
-        ["npm:4.1.3", {
-          "packageLocation": "./.yarn/cache/retry-request-npm-4.1.3-e5384403f6-0546f7f0de.zip/node_modules/retry-request/",
+        ["npm:4.2.2", {
+          "packageLocation": "./.yarn/cache/retry-request-npm-4.2.2-d96f0f10d3-392b6bcb3b.zip/node_modules/retry-request/",
           "packageDependencies": [
-            ["retry-request", "npm:4.1.3"],
-            ["debug", "virtual:428f325a939c2653ad822eb3d75efb02ac311523dd0d4f9645afc39ea00bd86eceac35a9d59c9b6977d76b670a4ef0ae057ea572338a44729aa592711a8c05a3#npm:4.3.3"]
+            ["retry-request", "npm:4.2.2"],
+            ["debug", "virtual:428f325a939c2653ad822eb3d75efb02ac311523dd0d4f9645afc39ea00bd86eceac35a9d59c9b6977d76b670a4ef0ae057ea572338a44729aa592711a8c05a3#npm:4.3.3"],
+            ["extend", "npm:3.0.2"]
           ],
           "linkType": "HARD",
         }]
@@ -5204,7 +5206,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./",
           "packageDependencies": [
             ["what3idols", "workspace:."],
-            ["@google-cloud/bigquery", "npm:5.10.0"],
+            ["@google-cloud/bigquery", "npm:5.11.0"],
             ["@react-google-maps/api", "virtual:843c93d1bf6b29d6441682c3e31490dff07e342be3bac5a39e7bea08cdfdc62d73e32af1135aa4c3b7560f44ef8be7598301febe357bbeac12cedc86f7c0495a#npm:2.7.0"],
             ["@types/google.maps", "npm:3.47.4"],
             ["@types/node", "npm:17.0.13"],
