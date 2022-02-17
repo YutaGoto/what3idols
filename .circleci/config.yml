@@ -3,6 +3,11 @@ version: 2.1
 orbs:
   node: circleci/node@5.0
   slack: circleci/slack@4.4.2
+  
+executors:
+  node-executor:
+    docker:
+        - image: node/default
 
 jobs:
   lint:
