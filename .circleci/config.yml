@@ -14,7 +14,7 @@ jobs:
       - node/install-packages:
           check-cache: always
           pkg-manager: yarn-berry
-          with-cache: false
+          with-cache: true
       - run:
           name: lint
           command: yarn lint
@@ -27,7 +27,7 @@ jobs:
       - node/install-packages:
           check-cache: always
           pkg-manager: yarn-berry
-          with-cache: false
+          with-cache: true
       - run:
           name: deploy
           command: yarn deploy
