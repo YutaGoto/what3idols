@@ -435,10 +435,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/google.maps@npm:^3.47.4":
-  version: 3.47.4
-  resolution: "@types/google.maps@npm:3.47.4"
-  checksum: 343a7e631816e7cc7afc3a5bfde4b9b0599de6a2abf1f77c5bd51aeebf7e3f4cbe7ff31c58307ee14dcd872a2d2a0096eca6524a5104cbe3ff08102444fb7d7e
+"@types/google.maps@npm:^3.48.0":
+  version: 3.48.0
+  resolution: "@types/google.maps@npm:3.48.0"
+  checksum: a1ff50c11b278e4b5cb4a4bdf06b825006124bec9683d4cf4cca50943b0e005c53c2f982bd27201eb429a8f3c75def056852a5f727cba528266e49b474b97c44
   languageName: node
   linkType: hard
 
@@ -4407,7 +4407,7 @@ __metadata:
   dependencies:
     "@google-cloud/bigquery": ^5.11.0
     "@react-google-maps/api": ^2.7.0
-    "@types/google.maps": ^3.47.4
+    "@types/google.maps": ^3.48.0
     "@types/node": ^17.0.13
     "@types/react": ^17.0.39
     bulma: ^0.9.3
