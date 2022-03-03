@@ -37,7 +37,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [
             ["@google-cloud/bigquery", "npm:5.11.0"],
             ["@react-google-maps/api", "virtual:843c93d1bf6b29d6441682c3e31490dff07e342be3bac5a39e7bea08cdfdc62d73e32af1135aa4c3b7560f44ef8be7598301febe357bbeac12cedc86f7c0495a#npm:2.7.0"],
-            ["@types/google.maps", "npm:3.47.4"],
+            ["@types/google.maps", "npm:3.48.1"],
             ["@types/node", "npm:17.0.13"],
             ["@types/react", "npm:17.0.39"],
             ["bulma", "npm:0.9.3"],
@@ -47,7 +47,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react", "npm:17.0.2"],
             ["react-bulma-components", "virtual:843c93d1bf6b29d6441682c3e31490dff07e342be3bac5a39e7bea08cdfdc62d73e32af1135aa4c3b7560f44ef8be7598301febe357bbeac12cedc86f7c0495a#npm:4.1.0"],
             ["react-dom", "virtual:843c93d1bf6b29d6441682c3e31490dff07e342be3bac5a39e7bea08cdfdc62d73e32af1135aa4c3b7560f44ef8be7598301febe357bbeac12cedc86f7c0495a#npm:17.0.2"],
-            ["sass", "npm:1.49.7"],
+            ["sass", "npm:1.49.9"],
             ["typescript", "patch:typescript@npm%3A4.5.5#~builtin<compat/typescript>::version=4.5.5&hash=493e53"],
             ["vercel", "npm:23.1.2"]
           ],
@@ -566,10 +566,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],
           "linkType": "HARD",
         }],
-        ["npm:3.47.4", {
-          "packageLocation": "./.yarn/cache/@types-google.maps-npm-3.47.4-51f4e58758-343a7e6318.zip/node_modules/@types/google.maps/",
+        ["npm:3.48.1", {
+          "packageLocation": "./.yarn/cache/@types-google.maps-npm-3.48.1-a06dfd9170-7d02dbde09.zip/node_modules/@types/google.maps/",
           "packageDependencies": [
-            ["@types/google.maps", "npm:3.47.4"]
+            ["@types/google.maps", "npm:3.48.1"]
           ],
           "linkType": "HARD",
         }]
@@ -3660,7 +3660,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["postcss", "npm:8.4.5"],
             ["react", "npm:17.0.2"],
             ["react-dom", "virtual:843c93d1bf6b29d6441682c3e31490dff07e342be3bac5a39e7bea08cdfdc62d73e32af1135aa4c3b7560f44ef8be7598301febe357bbeac12cedc86f7c0495a#npm:17.0.2"],
-            ["sass", "npm:1.49.7"],
+            ["sass", "npm:1.49.9"],
             ["styled-jsx", "virtual:ad02bc8d08c8fc25a7585653b4bcfd1f2280932cd948b3d5728f2b5b24349f764b083ed3a6d64436f3ea805a6b6210345ae1b554664ca66a28caf7fd65acb9ee#npm:5.0.0"],
             ["use-subscription", "virtual:ad02bc8d08c8fc25a7585653b4bcfd1f2280932cd948b3d5728f2b5b24349f764b083ed3a6d64436f3ea805a6b6210345ae1b554664ca66a28caf7fd65acb9ee#npm:1.5.1"]
           ],
@@ -4464,10 +4464,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["sass", [
-        ["npm:1.49.7", {
-          "packageLocation": "./.yarn/cache/sass-npm-1.49.7-31c62a5c43-514d1abff5.zip/node_modules/sass/",
+        ["npm:1.49.9", {
+          "packageLocation": "./.yarn/cache/sass-npm-1.49.9-0017d01f2e-e5653e3499.zip/node_modules/sass/",
           "packageDependencies": [
-            ["sass", "npm:1.49.7"],
+            ["sass", "npm:1.49.9"],
             ["chokidar", "npm:3.5.2"],
             ["immutable", "npm:4.0.0"],
             ["source-map-js", "npm:1.0.1"]
@@ -5215,7 +5215,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["what3idols", "workspace:."],
             ["@google-cloud/bigquery", "npm:5.11.0"],
             ["@react-google-maps/api", "virtual:843c93d1bf6b29d6441682c3e31490dff07e342be3bac5a39e7bea08cdfdc62d73e32af1135aa4c3b7560f44ef8be7598301febe357bbeac12cedc86f7c0495a#npm:2.7.0"],
-            ["@types/google.maps", "npm:3.47.4"],
+            ["@types/google.maps", "npm:3.48.1"],
             ["@types/node", "npm:17.0.13"],
             ["@types/react", "npm:17.0.39"],
             ["bulma", "npm:0.9.3"],
@@ -5225,7 +5225,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react", "npm:17.0.2"],
             ["react-bulma-components", "virtual:843c93d1bf6b29d6441682c3e31490dff07e342be3bac5a39e7bea08cdfdc62d73e32af1135aa4c3b7560f44ef8be7598301febe357bbeac12cedc86f7c0495a#npm:4.1.0"],
             ["react-dom", "virtual:843c93d1bf6b29d6441682c3e31490dff07e342be3bac5a39e7bea08cdfdc62d73e32af1135aa4c3b7560f44ef8be7598301febe357bbeac12cedc86f7c0495a#npm:17.0.2"],
-            ["sass", "npm:1.49.7"],
+            ["sass", "npm:1.49.9"],
             ["typescript", "patch:typescript@npm%3A4.5.5#~builtin<compat/typescript>::version=4.5.5&hash=493e53"],
             ["vercel", "npm:23.1.2"]
           ],
