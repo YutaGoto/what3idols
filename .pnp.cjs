@@ -37,7 +37,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [
             ["@google-cloud/bigquery", "npm:5.11.0"],
             ["@react-google-maps/api", "virtual:843c93d1bf6b29d6441682c3e31490dff07e342be3bac5a39e7bea08cdfdc62d73e32af1135aa4c3b7560f44ef8be7598301febe357bbeac12cedc86f7c0495a#npm:2.7.0"],
-            ["@types/google.maps", "npm:3.47.4"],
+            ["@types/google.maps", "npm:3.48.1"],
             ["@types/node", "npm:17.0.13"],
             ["@types/react", "npm:17.0.39"],
             ["bulma", "npm:0.9.3"],
@@ -566,10 +566,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],
           "linkType": "HARD",
         }],
-        ["npm:3.47.4", {
-          "packageLocation": "./.yarn/cache/@types-google.maps-npm-3.47.4-51f4e58758-343a7e6318.zip/node_modules/@types/google.maps/",
+        ["npm:3.48.1", {
+          "packageLocation": "./.yarn/cache/@types-google.maps-npm-3.48.1-a06dfd9170-7d02dbde09.zip/node_modules/@types/google.maps/",
           "packageDependencies": [
-            ["@types/google.maps", "npm:3.47.4"]
+            ["@types/google.maps", "npm:3.48.1"]
           ],
           "linkType": "HARD",
         }]
@@ -5215,7 +5215,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["what3idols", "workspace:."],
             ["@google-cloud/bigquery", "npm:5.11.0"],
             ["@react-google-maps/api", "virtual:843c93d1bf6b29d6441682c3e31490dff07e342be3bac5a39e7bea08cdfdc62d73e32af1135aa4c3b7560f44ef8be7598301febe357bbeac12cedc86f7c0495a#npm:2.7.0"],
-            ["@types/google.maps", "npm:3.47.4"],
+            ["@types/google.maps", "npm:3.48.1"],
             ["@types/node", "npm:17.0.13"],
             ["@types/react", "npm:17.0.39"],
             ["bulma", "npm:0.9.3"],
