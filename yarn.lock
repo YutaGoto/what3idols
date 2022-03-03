@@ -458,10 +458,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:*, @types/node@npm:^17.0.13":
+"@types/node@npm:*":
   version: 17.0.13
   resolution: "@types/node@npm:17.0.13"
   checksum: 8b87c850c1604c65e3474bd03d122914464b7970caed20f65f4a7706ab429353b896a3916be4d2581164eccda9e3dd95c338fbccf686ff85a824c40d15e8f3fa
+  languageName: node
+  linkType: hard
+
+"@types/node@npm:^17.0.21":
+  version: 17.0.21
+  resolution: "@types/node@npm:17.0.21"
+  checksum: 89dcd2fe82f21d3634266f8384e9c865cf8af49685639fbdbd799bdd1040480fb1e8eeda2d3b9fce41edbe704d2a4be9f427118c4ae872e8d9bb7cbeb3c41a94
   languageName: node
   linkType: hard
 
@@ -4408,7 +4415,7 @@ __metadata:
     "@google-cloud/bigquery": ^5.11.0
     "@react-google-maps/api": ^2.7.0
     "@types/google.maps": ^3.48.1
-    "@types/node": ^17.0.13
+    "@types/node": ^17.0.21
     "@types/react": ^17.0.39
     bulma: ^0.9.3
     eslint: ^8.10.0

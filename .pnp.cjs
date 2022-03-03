@@ -38,7 +38,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@google-cloud/bigquery", "npm:5.11.0"],
             ["@react-google-maps/api", "virtual:843c93d1bf6b29d6441682c3e31490dff07e342be3bac5a39e7bea08cdfdc62d73e32af1135aa4c3b7560f44ef8be7598301febe357bbeac12cedc86f7c0495a#npm:2.7.0"],
             ["@types/google.maps", "npm:3.48.1"],
-            ["@types/node", "npm:17.0.13"],
+            ["@types/node", "npm:17.0.21"],
             ["@types/react", "npm:17.0.39"],
             ["bulma", "npm:0.9.3"],
             ["eslint", "npm:8.10.0"],
@@ -598,6 +598,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/@types-node-npm-17.0.13-0b4bf052b4-8b87c850c1.zip/node_modules/@types/node/",
           "packageDependencies": [
             ["@types/node", "npm:17.0.13"]
+          ],
+          "linkType": "HARD",
+        }],
+        ["npm:17.0.21", {
+          "packageLocation": "./.yarn/cache/@types-node-npm-17.0.21-7d68eb6a13-89dcd2fe82.zip/node_modules/@types/node/",
+          "packageDependencies": [
+            ["@types/node", "npm:17.0.21"]
           ],
           "linkType": "HARD",
         }]
@@ -5216,7 +5223,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@google-cloud/bigquery", "npm:5.11.0"],
             ["@react-google-maps/api", "virtual:843c93d1bf6b29d6441682c3e31490dff07e342be3bac5a39e7bea08cdfdc62d73e32af1135aa4c3b7560f44ef8be7598301febe357bbeac12cedc86f7c0495a#npm:2.7.0"],
             ["@types/google.maps", "npm:3.48.1"],
-            ["@types/node", "npm:17.0.13"],
+            ["@types/node", "npm:17.0.21"],
             ["@types/react", "npm:17.0.39"],
             ["bulma", "npm:0.9.3"],
             ["eslint", "npm:8.10.0"],
