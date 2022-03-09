@@ -7,8 +7,9 @@ orbs:
 jobs:
   lint:
     working_directory: ~/what3idols
-    docker:
-      - image: circleci/node:latest
+    executor:
+      name: node/default
+      tag: '16'
     steps:
       - checkout
       - node/install-packages:
@@ -20,8 +21,9 @@ jobs:
           command: yarn lint
   deploy:
     working_directory: ~/what3idols
-    docker:
-      - image: circleci/node:latest
+    executor:
+      name: node/default
+      tag: '16'
     steps:
       - checkout
       - node/install-packages:
