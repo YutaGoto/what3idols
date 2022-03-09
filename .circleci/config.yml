@@ -9,7 +9,7 @@ jobs:
     working_directory: ~/what3idols
     executor:
       name: node/default
-      tag: '16'
+      tag: '16.14.0-browsers'
     steps:
       - checkout
       - node/install-packages:
@@ -23,7 +23,7 @@ jobs:
     working_directory: ~/what3idols
     executor:
       name: node/default
-      tag: '16'
+      tag: '16.14.0-browsers'
     steps:
       - checkout
       - node/install-packages:
