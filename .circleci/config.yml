@@ -7,27 +7,29 @@ orbs:
 jobs:
   lint:
     working_directory: ~/what3idols
-    docker:
-      - image: circleci/node:latest
+    executor:
+      name: node/default
+      tag: '16.14.0-browsers'
     steps:
       - checkout
       - node/install-packages:
           check-cache: always
           pkg-manager: yarn-berry
-          with-cache: true
+          with-cache: false
       - run:
           name: lint
           command: yarn lint
   deploy:
     working_directory: ~/what3idols
-    docker:
-      - image: circleci/node:latest
+    executor:
+      name: node/default
+      tag: '16.14.0-browsers'
     steps:
       - checkout
       - node/install-packages:
           check-cache: always
           pkg-manager: yarn-berry
-          with-cache: true
+          with-cache: false
       - run:
           name: deploy
           command: yarn deploy
