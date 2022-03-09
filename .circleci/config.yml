@@ -12,6 +12,7 @@ jobs:
     steps:
       - checkout
       - node/install-packages:
+          check-cache: never
           pkg-manager: yarn-berry
           with-cache: true
       - run:
@@ -24,6 +25,7 @@ jobs:
     steps:
       - checkout
       - node/install-packages:
+          check-cache: never
           pkg-manager: yarn-berry
           with-cache: true
       - run:
