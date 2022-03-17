@@ -1,8 +1,8 @@
-import React, { VFC } from "react"
-import Head from 'next/head'
+import React, { VFC } from 'react';
+import Head from 'next/head';
 
 interface Props {
-  description: string
+  description: string;
 }
 
 const Meta: VFC<Props> = ({ description }) => {
@@ -13,7 +13,7 @@ const Meta: VFC<Props> = ({ description }) => {
       <title>What3Idols!</title>
       <link rel="icon" type="image/png" href="/favicon.png" />
     </Head>
-  )
-}
+  );
+};
 
-export default Meta
+export default Meta;

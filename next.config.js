@@ -4,4 +4,4 @@ module.exports = {
     GOOGLE_MAPS_MAP_ID: process.env.GOOGLE_MAPS_MAP_ID,
     PROJECT_ID: process.env.PROJECT_ID,
   },
-}
+};

@@ -1,19 +1,19 @@
-import { NextComponentType, NextPageContext } from "next/types"
-import { ReactNode, VFC } from "react"
-import { Footer, Header } from "."
+import { NextComponentType, NextPageContext } from 'next/types';
+import { ReactNode, VFC } from 'react';
+import { Footer, Header } from '.';
 
 interface LayoutProps {
-  children: ReactNode
+  children: ReactNode;
 }
 
-const Layout: NextComponentType<NextPageContext, null, LayoutProps> = ({children}) => {
+const Layout: NextComponentType<NextPageContext, null, LayoutProps> = ({ children }) => {
   return (
     <>
       <Header />
       {children}
       <Footer />
     </>
-  )
-}
+  );
+};
 
-export default Layout
+export default Layout;

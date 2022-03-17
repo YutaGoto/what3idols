@@ -1,6 +1,6 @@
-import React, { VFC } from "react"
-import Image from 'next/image'
-import { Footer as BulmaFooter, Container, Content, Columns } from 'react-bulma-components'
+import React, { VFC } from 'react';
+import Image from 'next/image';
+import { Footer as BulmaFooter, Container, Content, Columns } from 'react-bulma-components';
 
 const Footer: VFC = () => {
   return (
@@ -10,7 +10,8 @@ const Footer: VFC = () => {
           <Columns>
             <Columns.Column size={9}>
               <p>
-                <strong>What 3 Idols</strong> by <a href="https://github.com/YutaGoto">Yuta Goto</a>.
+                <strong>What 3 Idols</strong> by <a href="https://github.com/YutaGoto">Yuta Goto</a>
+                .
               </p>
             </Columns.Column>
             <Columns.Column size={3}>
@@ -22,7 +23,7 @@ const Footer: VFC = () => {
         </Content>
       </Container>
     </BulmaFooter>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;
