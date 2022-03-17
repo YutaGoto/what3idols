@@ -1,4 +1,5 @@
-import React, { ChangeEvent, ReactElement, useState } from 'react'
+import { useJsApiLoader } from '@react-google-maps/api'
+import React, { ChangeEvent, ReactElement, useCallback, useState } from 'react'
 import { Button, Notification } from 'react-bulma-components'
 import {Meta, Layout} from '../components'
 import Main from '../components/pages/Main'
@@ -10,13 +11,35 @@ const Home = (): ReactElement => {
     idol2: "0",
     idol3: "0",
   })
-  const [mapUrl, setMapUrl] = useState<string>("https://maps.google.co.jp/maps?output=embed&q=35.685261046859836,139.75277829434054&z=13")
+  const [, setMap] = useState(null)
+  const [pinLatLng, setPinLatLng] = useState<LatLng | undefined>()
+
+  const initPosition: LatLng = {
+    lat: 35.69575,
+    lng: 139.77521,
+  }
+
   const [loading, setLoading] = useState<boolean>(false)
   const [notification, setNotification] = useState<NotificationToast>({
     show: false,
     type: 'text',
     body: '',
   })
+
+  const { isLoaded } = useJsApiLoader({
+    id: 'google-map-script',
+    googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY,
+  })
+
+  const onLoad = useCallback(function callback(map) {
+    const bounds = new window.google.maps.LatLngBounds();
+    map.fitBounds(bounds);
+    setMap(map)
+  }, [])
+
+  const onUnmount = useCallback(function callback(map) {
+    setMap(null)
+  }, [])
 
   const onChange = (e: ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     setSelectedIdols({
@@ -62,7 +85,7 @@ const Home = (): ReactElement => {
     }).then((json) => {
       const data = json as LatLng
       if (data == undefined) return
-      setMapUrl(`https://maps.google.co.jp/maps?output=embed&q=${data.lat},${data.lng}&z=13`)
+      setPinLatLng({lat: data.lat, lng: data.lng})
     }).catch((err) => {
       console.error(err)
       setNotification({
@@ -89,7 +112,11 @@ const Home = (): ReactElement => {
           </Notification>
         }
         <Main
-          mapUrl={mapUrl}
+          pinLatLng={pinLatLng}
+          initPosition={initPosition}
+          isLoaded={isLoaded}
+          onLoad={onLoad}
+          onUnmount={onUnmount}
           loading={loading}
           selectedIdols={selectedIdols}
           onChange={onChange}
