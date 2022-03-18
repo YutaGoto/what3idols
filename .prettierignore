@@ -1,0 +1,11 @@
+.circleci
+.vscode
+
+.yarn
+.next
+.pnp.*
+
+*.json
+yarn.lock
+
+README.md
