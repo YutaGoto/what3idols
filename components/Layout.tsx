@@ -1,5 +1,5 @@
 import { NextComponentType, NextPageContext } from 'next/types';
-import { ReactNode, VFC } from 'react';
+import { ReactNode } from 'react';
 import { Footer, Header } from '.';
 
 interface LayoutProps {

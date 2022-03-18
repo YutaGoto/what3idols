@@ -6,9 +6,7 @@ import { LatLng } from '../../types/Type';
 interface MapsProps {
   isLoaded: boolean;
   initPosition: LatLng;
-  onLoad: (e: any) => void;
-  onUnmount: (e: any) => void;
-  onClick: (e: any) => void;
+  onClick: (e: google.maps.MapMouseEvent) => void;
   center: LatLng;
   content: string;
 }
@@ -21,8 +19,6 @@ const containerStyle = {
 const MapsComponent: NextComponentType<NextPageContext, null, MapsProps> = ({
   isLoaded,
   initPosition,
-  onLoad,
-  onUnmount,
   onClick,
   center,
   content,
@@ -36,14 +32,12 @@ const MapsComponent: NextComponentType<NextPageContext, null, MapsProps> = ({
               mapContainerStyle={containerStyle}
               zoom={10}
               center={initPosition}
-              onLoad={onLoad}
-              onUnmount={onUnmount}
               onClick={onClick}
               options={{
                 mapId: process.env.GOOGLE_MAPS_MAP_ID,
               }}
             >
-              <InfoWindow position={center} onCloseClick={() => {}}>
+              <InfoWindow position={center}>
                 <p>{content}</p>
               </InfoWindow>
             </GoogleMap>

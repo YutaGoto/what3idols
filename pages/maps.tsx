@@ -1,4 +1,4 @@
-import React, { ReactElement, useState, useCallback } from 'react';
+import React, { ReactElement, useState } from 'react';
 import { useJsApiLoader } from '@react-google-maps/api';
 import { Button, Notification } from 'react-bulma-components';
 import { Layout, Meta } from '../components';
@@ -7,7 +7,6 @@ import { LatLng, NotificationToast } from '../types/Type';
 import idols from '../utils/idols.json';
 
 const Maps = (): ReactElement => {
-  const [, setMap] = useState(null);
   const [content, setContent] = useState<string>('');
   const [center, setCenter] = useState<LatLng>({
     lat: 35.69575,
@@ -26,20 +25,11 @@ const Maps = (): ReactElement => {
 
   const { isLoaded } = useJsApiLoader({
     id: 'google-map-script',
+    language: 'ja',
     googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY,
   });
 
-  const onLoad = useCallback(function callback(map) {
-    const bounds = new window.google.maps.LatLngBounds();
-    map.fitBounds(bounds);
-    setMap(map);
-  }, []);
-
-  const onUnmount = useCallback(function callback(map) {
-    setMap(null);
-  }, []);
-
-  const onClick = async (e: { latLng: { toJSON: () => LatLng } }) => {
+  const onClick = async (e: google.maps.MapMouseEvent) => {
     setNotification({ ...notification, show: false });
     const latLng: LatLng = e.latLng.toJSON();
     await fetch('/api/map2idol', {
@@ -93,8 +83,6 @@ const Maps = (): ReactElement => {
         <MapsComponent
           isLoaded={isLoaded}
           initPosition={initPosition}
-          onLoad={onLoad}
-          onUnmount={onUnmount}
           onClick={onClick}
           center={center}
           content={content}

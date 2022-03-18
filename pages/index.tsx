@@ -1,5 +1,5 @@
 import { useJsApiLoader } from '@react-google-maps/api';
-import React, { ChangeEvent, ReactElement, useCallback, useState } from 'react';
+import React, { ChangeEvent, ReactElement, useState } from 'react';
 import { Button, Notification } from 'react-bulma-components';
 import { Meta, Layout } from '../components';
 import Main from '../components/pages/Main';
@@ -11,7 +11,6 @@ const Home = (): ReactElement => {
     idol2: '0',
     idol3: '0',
   });
-  const [, setMap] = useState(null);
   const [pinLatLng, setPinLatLng] = useState<LatLng | undefined>();
 
   const initPosition: LatLng = {
@@ -28,18 +27,10 @@ const Home = (): ReactElement => {
 
   const { isLoaded } = useJsApiLoader({
     id: 'google-map-script',
+    language: 'ja',
+    region: 'JP',
     googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY,
   });
-
-  const onLoad = useCallback(function callback(map) {
-    const bounds = new window.google.maps.LatLngBounds();
-    map.fitBounds(bounds);
-    setMap(map);
-  }, []);
-
-  const onUnmount = useCallback(function callback(map) {
-    setMap(null);
-  }, []);
 
   const onChange = (e: ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     setSelectedIdols({
@@ -121,8 +112,6 @@ const Home = (): ReactElement => {
           pinLatLng={pinLatLng}
           initPosition={initPosition}
           isLoaded={isLoaded}
-          onLoad={onLoad}
-          onUnmount={onUnmount}
           loading={loading}
           selectedIdols={selectedIdols}
           onChange={onChange}

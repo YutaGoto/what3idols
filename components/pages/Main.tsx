@@ -11,8 +11,6 @@ interface MainProps {
   initPosition: LatLng;
   loading: boolean;
   selectedIdols: SelectedIdols;
-  onLoad: (e: any) => void;
-  onUnmount: (e: any) => void;
   onChange: (e: ChangeEvent<HTMLInputElement | HTMLSelectElement>) => void;
   onSubmitIdols: () => void;
 }
@@ -29,8 +27,6 @@ const MainComponent: NextComponentType<NextPageContext, null, MainProps> = ({
   initPosition,
   loading,
   selectedIdols,
-  onLoad,
-  onUnmount,
   isLoaded,
   onChange,
   onSubmitIdols,
@@ -104,8 +100,6 @@ const MainComponent: NextComponentType<NextPageContext, null, MainProps> = ({
             mapContainerStyle={containerStyle}
             zoom={10}
             center={pinLatLng || initPosition}
-            onLoad={onLoad}
-            onUnmount={onUnmount}
             options={{
               mapId: process.env.GOOGLE_MAPS_MAP_ID,
             }}
