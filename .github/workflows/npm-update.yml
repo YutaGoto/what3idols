@@ -1,0 +1,43 @@
+name: npm-update
+
+on:
+  schedule:
+    - cron: '0 3 25 * *'
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set year
+        env:
+          TZ: 'Asia/Tokyo'
+        run: echo "YEAR=$(date +'%Y')" >> $GITHUB_ENV
+      - name: Set month
+        env:
+          TZ: 'Asia/Tokyo'
+        run: echo "MONTH=$(date +'%m')" >> $GITHUB_ENV
+      - uses: actions/setup-node@v2
+        with:
+          node-version: "16"
+      - run: yarn
+      - run: yarn up "*"
+      - name: create Pull Request
+        id: create-pull-request
+        uses: peter-evans/create-pull-request@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: ':package: yarn up packeges'
+          committer: YutaGoto <YutaGoto@users.noreply.github.com>
+          author: YutaGoto <YutaGoto@users.noreply.github.com>
+          title: ':package: yarn up'
+          branch: yarn-up-${{ env.YEAR }}-${{ env.MONTH }}
+          body: |
+            ```
+            yarn up
+            ```
+      - name: Check outputs
+        run: |
+          echo "Pull Request Number - ${{ env.PULL_REQUEST_NUMBER }}"
