@@ -465,6 +465,22 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/minimist@npm:^1":
+  version: 1.2.2
+  resolution: "@types/minimist@npm:1.2.2"
+  checksum: b8da83c66eb4aac0440e64674b19564d9d86c80ae273144db9681e5eeff66f238ade9515f5006ffbfa955ceff8b89ad2bd8ec577d7caee74ba101431fb07045d
+  languageName: node
+  linkType: hard
+
+"@types/node-forge@npm:^1":
+  version: 1.0.1
+  resolution: "@types/node-forge@npm:1.0.1"
+  dependencies:
+    "@types/node": "*"
+  checksum: e432db4ff46091f2b77f609098833be0699b48a247945490e147cfd22112a2376c7f5869c7c8b59b99d77a5851a02fd44cb1cf7820a3c96f1d7ae109cf1f0078
+  languageName: node
+  linkType: hard
+
 "@types/node@npm:*":
   version: 17.0.13
   resolution: "@types/node@npm:17.0.13"
@@ -3177,13 +3193,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"minimist@npm:^1.2.0":
-  version: 1.2.5
-  resolution: "minimist@npm:1.2.5"
-  checksum: 86706ce5b36c16bfc35c5fe3dbb01d5acdc9a22f2b6cc810b6680656a1d2c0e44a0159c9a3ba51fb072bb5c203e49e10b51dcd0eec39c481f4c42086719bae52
-  languageName: node
-  linkType: hard
-
 "minimist@npm:^1.2.6":
   version: 1.2.6
   resolution: "minimist@npm:1.2.6"
@@ -3390,10 +3399,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"node-forge@npm:^0.10.0":
-  version: 0.10.0
-  resolution: "node-forge@npm:0.10.0"
-  checksum: 5aa6dc9922e424a20ef101d2f517418e2bc9cfc0255dd22e0701c0fad1568445f510ee67f6f3fcdf085812c4ca1b847b8ba45683b34776828e41f5c1794e42e1
+"node-forge@npm:^1.3.1":
+  version: 1.3.1
+  resolution: "node-forge@npm:1.3.1"
+  checksum: 08fb072d3d670599c89a1704b3e9c649ff1b998256737f0e06fbd1a5bf41cae4457ccaee32d95052d80bbafd9ffe01284e078c8071f0267dc9744e51c5ed42a9
   languageName: node
   linkType: hard
 
@@ -4782,7 +4791,9 @@ __metadata:
     "@google-cloud/bigquery": ^5.11.0
     "@react-google-maps/api": ^2.7.0
     "@types/google.maps": ^3.48.2
+    "@types/minimist": ^1
     "@types/node": ^17.0.21
+    "@types/node-forge": ^1
     "@types/prettier": ^2
     "@types/react": ^17.0.39
     "@typescript-eslint/eslint-plugin": ^5.15.0
@@ -4797,7 +4808,9 @@ __metadata:
     eslint-plugin-prettier: ^4.0.0
     eslint-plugin-react: ^7.29.4
     eslint-plugin-react-hooks: ^4.3.0
+    minimist: ^1.2.6
     next: ^12.1.0
+    node-forge: ^1.3.1
     prettier: ^2.6.0
     react: ^17.0.2
     react-bulma-components: ^4.1.0
