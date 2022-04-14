@@ -19,6 +19,20 @@ jobs:
       - run:
           name: lint
           command: yarn lint
+  typecheck:
+    working_directory: ~/what3idols
+    executor:
+      name: node/default
+      tag: '16.14.0-browsers'
+    steps:
+      - checkout
+      - node/install-packages:
+          check-cache: always
+          pkg-manager: yarn-berry
+          with-cache: false
+      - run:
+          name: typecheck
+          command: yarn tsc
   deploy:
     working_directory: ~/what3idols
     executor:
@@ -45,11 +59,13 @@ workflows:
   main:
     jobs:
       - lint
+      - typecheck
       - deploy:
           context:
             - slack
           requires:
             - lint
+            - typecheck
           filters:
             branches:
               only:
