@@ -1,5 +1,5 @@
 import { GoogleMap, InfoWindow, useJsApiLoader } from '@react-google-maps/api';
-import { useEffect, useState } from 'react';
+import { CSSProperties, useEffect, useState } from 'react';
 import { Button, Container, Content, Section } from 'react-bulma-components';
 import { Layout, Meta } from '../components';
 import { LatLng } from '../types/Type';
@@ -18,7 +18,7 @@ const What3Idols404 = () => {
     googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY,
   });
 
-  const containerStyle = {
+  const containerStyle: CSSProperties = {
     width: '100%',
     height: '60vh',
   };
