@@ -7,7 +7,7 @@ interface Props {
   nofollow?: boolean;
 }
 
-const Meta: VFC<Props> = ({ description, noindex = false, nofollow= false }) => {
+const Meta: VFC<Props> = ({ description, noindex = false, nofollow = false }) => {
   return (
     <Head>
       <meta property="og:title" content="What3Idols" />

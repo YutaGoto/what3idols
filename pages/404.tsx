@@ -52,7 +52,7 @@ const What3Idols404 = () => {
 
   return (
     <>
-      <Meta description="ページが見つかりませんでした" />
+      <Meta description="ページが見つかりませんでした" noindex nofollow />
       <Layout>
         <Container>
           <Content className="has-text-centered">
