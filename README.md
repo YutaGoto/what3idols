@@ -4,6 +4,7 @@
 
 ![Vercel](http://therealsujitk-vercel-badge.vercel.app/?app=what3idols)
 [![CircleCI](https://circleci.com/gh/YutaGoto/what3idols/tree/main.svg?style=svg)](https://circleci.com/gh/YutaGoto/what3idols/tree/main)
+[![action](https://github.com/YutaGoto/what3idols/actions/workflows/npm-update.yml/badge.svg)](https://github.com/YutaGoto/what3idols/actions)
 
 ![what3idols](./public/logo.png)
 
