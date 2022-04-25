@@ -19,7 +19,6 @@
         "eslint:recommended",
         "plugin:import/typescript",
         "plugin:@typescript-eslint/recommended",
-        "plugin:react-hooks/recommended",
         "plugin:jsx-a11y/recommended",
         "plugin:prettier/recommended"
       ]
