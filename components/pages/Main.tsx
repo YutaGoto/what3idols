@@ -41,7 +41,7 @@ const MainComponent: NextComponentType<NextPageContext, null, MainProps> = ({
               <Control>
                 <Select onChange={onChange} value={selectedIdols.idol1} color="info" name="idol1">
                   {idols.idols.map((idol) => (
-                    <option key={idol.id} value={idol.id}>
+                    <option key={idol.id} value={idol.label}>
                       {idol.label}
                     </option>
                   ))}
@@ -56,7 +56,7 @@ const MainComponent: NextComponentType<NextPageContext, null, MainProps> = ({
               <Control>
                 <Select onChange={onChange} value={selectedIdols.idol2} color="info" name="idol2">
                   {idols.idols.map((idol) => (
-                    <option key={idol.id} value={idol.id}>
+                    <option key={idol.id} value={idol.label}>
                       {idol.label}
                     </option>
                   ))}
@@ -71,7 +71,7 @@ const MainComponent: NextComponentType<NextPageContext, null, MainProps> = ({
               <Control>
                 <Select onChange={onChange} value={selectedIdols.idol3} color="info" name="idol3">
                   {idols.idols.map((idol) => (
-                    <option key={idol.id} value={idol.id}>
+                    <option key={idol.id} value={idol.label}>
                       {idol.label}
                     </option>
                   ))}

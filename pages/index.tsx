@@ -41,17 +41,13 @@ const Home = (): ReactElement => {
 
   const onSubmitIdols = async () => {
     setNotification({ ...notification, show: false });
-    const arrayIdols = [
-      parseInt(selectedIdols.idol1),
-      parseInt(selectedIdols.idol2),
-      parseInt(selectedIdols.idol3),
-    ].sort((a, b) => {
-      if (a > b) return 1;
-      if (a < b) return -1;
-      return 0;
-    });
+    const arrayIdols = [selectedIdols.idol1, selectedIdols.idol2, selectedIdols.idol3];
 
-    if (arrayIdols[0] == arrayIdols[1] || arrayIdols[1] == arrayIdols[2]) {
+    if (
+      arrayIdols[0] == arrayIdols[1] ||
+      arrayIdols[1] == arrayIdols[2] ||
+      arrayIdols[2] == arrayIdols[0]
+    ) {
       setNotification({
         show: true,
         type: 'warning',
@@ -60,7 +56,7 @@ const Home = (): ReactElement => {
       return;
     }
 
-    if (arrayIdols.includes(0)) {
+    if (arrayIdols.includes('')) {
       setNotification({
         show: true,
         type: 'warning',

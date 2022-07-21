@@ -14,9 +14,9 @@ const bigquery = new BigQuery({
 const map2idol = async (req: NextApiRequest, res: NextApiResponse) => {
   const latlng: LatLng = JSON.parse(req.body);
   const query = `select lat, lng, idols
-  from \`${process.env.PROJECT_ID}.what3idols.maps\`
-  where lat between ${latlng.lat - 0.0106} and ${latlng.lat}
-  and lng between ${latlng.lng - 0.0117} and ${latlng.lng}
+  from \`${process.env.PROJECT_ID}.what3idols.map_idols\`
+  where lat between ${latlng.lat - 0.004} and ${latlng.lat}
+  and lng between ${latlng.lng - 0.005} and ${latlng.lng}
   ;`;
 
   const options = {
