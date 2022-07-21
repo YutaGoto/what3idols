@@ -13,7 +13,7 @@ const bigquery = new BigQuery({
 const idol2map = async (req: NextApiRequest, res: NextApiResponse) => {
   const idols = req.body;
   const query = `select lat, lng
-  from \`${process.env.PROJECT_ID}.what3idols.maps\`
+  from \`${process.env.PROJECT_ID}.what3idols.map_idols\`
   where idols = "${idols}";`;
 
   const options = {

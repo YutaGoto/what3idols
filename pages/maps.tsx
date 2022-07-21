@@ -4,7 +4,6 @@ import { Button, Notification } from 'react-bulma-components';
 import { Layout, Meta } from '../components';
 import MapsComponent from '../components/pages/Maps';
 import { LatLng, NotificationToast } from '../types/Type';
-import idols from '../utils/idols.json';
 
 const Maps = (): ReactElement => {
   const [content, setContent] = useState<string>('');
@@ -26,6 +25,7 @@ const Maps = (): ReactElement => {
   const { isLoaded } = useJsApiLoader({
     id: 'google-map-script',
     language: 'ja',
+    region: 'JP',
     googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY,
   });
 
@@ -44,11 +44,8 @@ const Maps = (): ReactElement => {
         const data = json;
         if (data == undefined) return;
         const idolsData = data.idols.split(',');
-        const idol1 = idols.idols.find((v) => v.id == idolsData[0]);
-        const idol2 = idols.idols.find((v) => v.id == idolsData[1]);
-        const idol3 = idols.idols.find((v) => v.id == idolsData[2]);
 
-        setContent(`${idol1.label}, ${idol2.label}, ${idol3.label}`);
+        setContent(idolsData.join(', '));
         setCenter({
           lat: latLng.lat,
           lng: latLng.lng,
