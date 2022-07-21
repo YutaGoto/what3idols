@@ -4,6 +4,7 @@ import { Container, Section, Form, Button, Columns, Loader } from 'react-bulma-c
 import idols from '../../utils/idols.json';
 import { LatLng, SelectedIdols } from '../../types/Type';
 import { GoogleMap, Marker } from '@react-google-maps/api';
+import { SubmitHandler, UseFormHandleSubmit, UseFormRegister } from 'react-hook-form';
 
 interface MainProps {
   isLoaded: boolean;
@@ -11,8 +12,9 @@ interface MainProps {
   initPosition: LatLng;
   loading: boolean;
   selectedIdols: SelectedIdols;
-  onChange: (e: ChangeEvent<HTMLInputElement | HTMLSelectElement>) => void;
-  onSubmitIdols: () => void;
+  register: UseFormRegister<SelectedIdols>;
+  handleSubmit: UseFormHandleSubmit<SelectedIdols>;
+  onSubmit: SubmitHandler<SelectedIdols>;
 }
 
 const { Field, Select, Label, Control } = Form;
@@ -28,70 +30,72 @@ const MainComponent: NextComponentType<NextPageContext, null, MainProps> = ({
   loading,
   selectedIdols,
   isLoaded,
-  onChange,
-  onSubmitIdols,
+  register,
+  handleSubmit,
+  onSubmit,
 }) => {
   return (
     <Container>
       <Section>
-        <Columns>
-          <Columns.Column>
-            <Field>
-              <Label>アイドル</Label>
-              <Control>
-                <Select onChange={onChange} value={selectedIdols.idol1} color="info" name="idol1">
-                  {idols.idols.map((idol) => (
-                    <option key={idol.id} value={idol.label}>
-                      {idol.label}
-                    </option>
-                  ))}
-                </Select>
-              </Control>
-            </Field>
-          </Columns.Column>
+        <form onSubmit={handleSubmit(onSubmit)}>
+          <Columns>
+            <Columns.Column>
+              <Field>
+                <Label>アイドル</Label>
+                <Control>
+                  <Select color="info" {...register('idol1')}>
+                    {idols.idols.map((idol) => (
+                      <option key={idol.id} value={idol.label}>
+                        {idol.label}
+                      </option>
+                    ))}
+                  </Select>
+                </Control>
+              </Field>
+            </Columns.Column>
 
-          <Columns.Column>
-            <Field>
-              <Label>アイドル</Label>
-              <Control>
-                <Select onChange={onChange} value={selectedIdols.idol2} color="info" name="idol2">
-                  {idols.idols.map((idol) => (
-                    <option key={idol.id} value={idol.label}>
-                      {idol.label}
-                    </option>
-                  ))}
-                </Select>
-              </Control>
-            </Field>
-          </Columns.Column>
+            <Columns.Column>
+              <Field>
+                <Label>アイドル</Label>
+                <Control>
+                  <Select color="info" {...register('idol2')}>
+                    {idols.idols.map((idol) => (
+                      <option key={idol.id} value={idol.label}>
+                        {idol.label}
+                      </option>
+                    ))}
+                  </Select>
+                </Control>
+              </Field>
+            </Columns.Column>
 
-          <Columns.Column>
-            <Field>
-              <Label>アイドル</Label>
-              <Control>
-                <Select onChange={onChange} value={selectedIdols.idol3} color="info" name="idol3">
-                  {idols.idols.map((idol) => (
-                    <option key={idol.id} value={idol.label}>
-                      {idol.label}
-                    </option>
-                  ))}
-                </Select>
-              </Control>
-            </Field>
-          </Columns.Column>
-        </Columns>
+            <Columns.Column>
+              <Field>
+                <Label>アイドル</Label>
+                <Control>
+                  <Select color="info" {...register('idol3')}>
+                    {idols.idols.map((idol) => (
+                      <option key={idol.id} value={idol.label}>
+                        {idol.label}
+                      </option>
+                    ))}
+                  </Select>
+                </Control>
+              </Field>
+            </Columns.Column>
+          </Columns>
 
-        <Button.Group>
-          <Button
-            color="primary"
-            onClick={onSubmitIdols}
-            disabled={loading}
-            className="has-text-white"
-          >
-            What3Idols!!!
-          </Button>
-          {loading ? <Loader /> : null}
-        </Button.Group>
+          <Button.Group>
+            <Form.Field kind="group">
+              <Form.Control>
+                <Button color="primary" disabled={loading} className="has-text-white">
+                  What3Idols!!!
+                </Button>
+                {loading ? <Loader /> : null}
+              </Form.Control>
+            </Form.Field>
+          </Button.Group>
+        </form>
       </Section>
 
       <Section>

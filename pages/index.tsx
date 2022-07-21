@@ -1,5 +1,6 @@
 import { useJsApiLoader } from '@react-google-maps/api';
 import React, { ChangeEvent, ReactElement, useState } from 'react';
+import {SubmitHandler, useForm} from 'react-hook-form';
 import { Button, Notification } from 'react-bulma-components';
 import { Meta, Layout } from '../components';
 import Main from '../components/pages/Main';
@@ -32,16 +33,12 @@ const Home = (): ReactElement => {
     googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY,
   });
 
-  const onChange = (e: ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
-    setSelectedIdols({
-      ...selectedIdols,
-      [e.target.name]: e.target.value,
-    });
-  };
+  const {register, handleSubmit} = useForm<SelectedIdols>();
 
-  const onSubmitIdols = async () => {
+  const onSubmit: SubmitHandler<SelectedIdols> = async (values) => {
+    console.log(values)
     setNotification({ ...notification, show: false });
-    const arrayIdols = [selectedIdols.idol1, selectedIdols.idol2, selectedIdols.idol3];
+    const arrayIdols = [values.idol1, values.idol2, values.idol3];
 
     if (
       arrayIdols[0] == arrayIdols[1] ||
@@ -110,8 +107,9 @@ const Home = (): ReactElement => {
           isLoaded={isLoaded}
           loading={loading}
           selectedIdols={selectedIdols}
-          onChange={onChange}
-          onSubmitIdols={onSubmitIdols}
+          register={register}
+          handleSubmit={handleSubmit}
+          onSubmit={onSubmit}
         />
       </Layout>
     </>
