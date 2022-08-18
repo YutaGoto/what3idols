@@ -1,23 +1,28 @@
-import { ChangeEvent } from 'react';
 import { NextComponentType, NextPageContext } from 'next/types';
 import { Container, Section, Form, Button, Columns, Loader } from 'react-bulma-components';
 import idols from '../../utils/idols.json';
 import { LatLng, SelectedIdols } from '../../types/Type';
 import { GoogleMap, Marker } from '@react-google-maps/api';
-import { SubmitHandler, UseFormHandleSubmit, UseFormRegister } from 'react-hook-form';
+import {
+  Controller,
+  Control,
+  SubmitHandler,
+  UseFormHandleSubmit,
+  UseFormRegister,
+} from 'react-hook-form';
 
 interface MainProps {
   isLoaded: boolean;
   pinLatLng?: LatLng;
   initPosition: LatLng;
   loading: boolean;
-  selectedIdols: SelectedIdols;
+  control: Control<SelectedIdols, object>;
   register: UseFormRegister<SelectedIdols>;
   handleSubmit: UseFormHandleSubmit<SelectedIdols>;
   onSubmit: SubmitHandler<SelectedIdols>;
 }
 
-const { Field, Select, Label, Control } = Form;
+const { Field, Select, Label, Control: BulmaControl } = Form;
 
 const containerStyle = {
   width: '100%',
@@ -28,8 +33,8 @@ const MainComponent: NextComponentType<NextPageContext, null, MainProps> = ({
   pinLatLng,
   initPosition,
   loading,
-  selectedIdols,
   isLoaded,
+  control,
   register,
   handleSubmit,
   onSubmit,
@@ -42,58 +47,76 @@ const MainComponent: NextComponentType<NextPageContext, null, MainProps> = ({
             <Columns.Column>
               <Field>
                 <Label>アイドル</Label>
-                <Control>
-                  <Select color="info" {...register('idol1')}>
-                    {idols.idols.map((idol) => (
-                      <option key={idol.id} value={idol.label}>
-                        {idol.label}
-                      </option>
-                    ))}
-                  </Select>
-                </Control>
+                <BulmaControl>
+                  <Controller
+                    control={control}
+                    {...register('idol1')}
+                    render={({ field }) => (
+                      <Select color="info" {...field}>
+                        {idols.idols.map((idol) => (
+                          <option key={idol.id} value={idol.label}>
+                            {idol.label}
+                          </option>
+                        ))}
+                      </Select>
+                    )}
+                  />
+                </BulmaControl>
               </Field>
             </Columns.Column>
 
             <Columns.Column>
               <Field>
                 <Label>アイドル</Label>
-                <Control>
-                  <Select color="info" {...register('idol2')}>
-                    {idols.idols.map((idol) => (
-                      <option key={idol.id} value={idol.label}>
-                        {idol.label}
-                      </option>
-                    ))}
-                  </Select>
-                </Control>
+                <BulmaControl>
+                  <Controller
+                    control={control}
+                    {...register('idol2')}
+                    render={({ field }) => (
+                      <Select color="info" {...field}>
+                        {idols.idols.map((idol) => (
+                          <option key={idol.id} value={idol.label}>
+                            {idol.label}
+                          </option>
+                        ))}
+                      </Select>
+                    )}
+                  />
+                </BulmaControl>
               </Field>
             </Columns.Column>
 
             <Columns.Column>
               <Field>
                 <Label>アイドル</Label>
-                <Control>
-                  <Select color="info" {...register('idol3')}>
-                    {idols.idols.map((idol) => (
-                      <option key={idol.id} value={idol.label}>
-                        {idol.label}
-                      </option>
-                    ))}
-                  </Select>
-                </Control>
+                <BulmaControl>
+                  <Controller
+                    control={control}
+                    {...register('idol3')}
+                    render={({ field }) => (
+                      <Select color="info" {...field}>
+                        {idols.idols.map((idol) => (
+                          <option key={idol.id} value={idol.label}>
+                            {idol.label}
+                          </option>
+                        ))}
+                      </Select>
+                    )}
+                  />
+                </BulmaControl>
               </Field>
             </Columns.Column>
           </Columns>
 
           <Button.Group>
-            <Form.Field kind="group">
-              <Form.Control>
+            <Field kind="group">
+              <BulmaControl>
                 <Button color="primary" disabled={loading} className="has-text-white">
                   What3Idols!!!
                 </Button>
                 {loading ? <Loader /> : null}
-              </Form.Control>
-            </Form.Field>
+              </BulmaControl>
+            </Field>
           </Button.Group>
         </form>
       </Section>
