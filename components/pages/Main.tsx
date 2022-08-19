@@ -1,21 +1,28 @@
-import { ChangeEvent } from 'react';
 import { NextComponentType, NextPageContext } from 'next/types';
 import { Container, Section, Form, Button, Columns, Loader } from 'react-bulma-components';
 import idols from '../../utils/idols.json';
 import { LatLng, SelectedIdols } from '../../types/Type';
 import { GoogleMap, Marker } from '@react-google-maps/api';
+import {
+  Controller,
+  Control,
+  SubmitHandler,
+  UseFormHandleSubmit,
+  UseFormRegister,
+} from 'react-hook-form';
 
 interface MainProps {
   isLoaded: boolean;
   pinLatLng?: LatLng;
   initPosition: LatLng;
   loading: boolean;
-  selectedIdols: SelectedIdols;
-  onChange: (e: ChangeEvent<HTMLInputElement | HTMLSelectElement>) => void;
-  onSubmitIdols: () => void;
+  control: Control<SelectedIdols, object>;
+  register: UseFormRegister<SelectedIdols>;
+  handleSubmit: UseFormHandleSubmit<SelectedIdols>;
+  onSubmit: SubmitHandler<SelectedIdols>;
 }
 
-const { Field, Select, Label, Control } = Form;
+const { Field, Select, Label, Control: BulmaControl } = Form;
 
 const containerStyle = {
   width: '100%',
@@ -26,72 +33,92 @@ const MainComponent: NextComponentType<NextPageContext, null, MainProps> = ({
   pinLatLng,
   initPosition,
   loading,
-  selectedIdols,
   isLoaded,
-  onChange,
-  onSubmitIdols,
+  control,
+  register,
+  handleSubmit,
+  onSubmit,
 }) => {
   return (
     <Container>
       <Section>
-        <Columns>
-          <Columns.Column>
-            <Field>
-              <Label>アイドル</Label>
-              <Control>
-                <Select onChange={onChange} value={selectedIdols.idol1} color="info" name="idol1">
-                  {idols.idols.map((idol) => (
-                    <option key={idol.id} value={idol.label}>
-                      {idol.label}
-                    </option>
-                  ))}
-                </Select>
-              </Control>
-            </Field>
-          </Columns.Column>
+        <form onSubmit={handleSubmit(onSubmit)}>
+          <Columns>
+            <Columns.Column>
+              <Field>
+                <Label>アイドル</Label>
+                <BulmaControl>
+                  <Controller
+                    control={control}
+                    {...register('idol1')}
+                    render={({ field }) => (
+                      <Select color="info" {...field}>
+                        {idols.idols.map((idol) => (
+                          <option key={idol.id} value={idol.label}>
+                            {idol.label}
+                          </option>
+                        ))}
+                      </Select>
+                    )}
+                  />
+                </BulmaControl>
+              </Field>
+            </Columns.Column>
 
-          <Columns.Column>
-            <Field>
-              <Label>アイドル</Label>
-              <Control>
-                <Select onChange={onChange} value={selectedIdols.idol2} color="info" name="idol2">
-                  {idols.idols.map((idol) => (
-                    <option key={idol.id} value={idol.label}>
-                      {idol.label}
-                    </option>
-                  ))}
-                </Select>
-              </Control>
-            </Field>
-          </Columns.Column>
+            <Columns.Column>
+              <Field>
+                <Label>アイドル</Label>
+                <BulmaControl>
+                  <Controller
+                    control={control}
+                    {...register('idol2')}
+                    render={({ field }) => (
+                      <Select color="info" {...field}>
+                        {idols.idols.map((idol) => (
+                          <option key={idol.id} value={idol.label}>
+                            {idol.label}
+                          </option>
+                        ))}
+                      </Select>
+                    )}
+                  />
+                </BulmaControl>
+              </Field>
+            </Columns.Column>
 
-          <Columns.Column>
-            <Field>
-              <Label>アイドル</Label>
-              <Control>
-                <Select onChange={onChange} value={selectedIdols.idol3} color="info" name="idol3">
-                  {idols.idols.map((idol) => (
-                    <option key={idol.id} value={idol.label}>
-                      {idol.label}
-                    </option>
-                  ))}
-                </Select>
-              </Control>
-            </Field>
-          </Columns.Column>
-        </Columns>
+            <Columns.Column>
+              <Field>
+                <Label>アイドル</Label>
+                <BulmaControl>
+                  <Controller
+                    control={control}
+                    {...register('idol3')}
+                    render={({ field }) => (
+                      <Select color="info" {...field}>
+                        {idols.idols.map((idol) => (
+                          <option key={idol.id} value={idol.label}>
+                            {idol.label}
+                          </option>
+                        ))}
+                      </Select>
+                    )}
+                  />
+                </BulmaControl>
+              </Field>
+            </Columns.Column>
+          </Columns>
 
-        <Button.Group>
-          <Button
-            color="primary"
-            onClick={onSubmitIdols}
-            disabled={loading}
-            className="has-text-white"
-          >
-            What3Idols!!!
-          </Button>
-          {loading ? <Loader /> : null}
-        </Button.Group>
+          <Button.Group>
+            <Field kind="group">
+              <BulmaControl>
+                <Button color="primary" disabled={loading} className="has-text-white">
+                  What3Idols!!!
+                </Button>
+                {loading ? <Loader /> : null}
+              </BulmaControl>
+            </Field>
+          </Button.Group>
+        </form>
       </Section>
 
       <Section>

@@ -1,23 +1,13 @@
 import { useJsApiLoader } from '@react-google-maps/api';
-import React, { ChangeEvent, ReactElement, useState } from 'react';
+import React, { ReactElement, useState } from 'react';
+import { SubmitHandler, useForm } from 'react-hook-form';
 import { Button, Notification } from 'react-bulma-components';
 import { Meta, Layout } from '../components';
 import Main from '../components/pages/Main';
 import { LatLng, SelectedIdols, NotificationToast } from '../types/Type';
 
 const Home = (): ReactElement => {
-  const [selectedIdols, setSelectedIdols] = useState<SelectedIdols>({
-    idol1: '0',
-    idol2: '0',
-    idol3: '0',
-  });
   const [pinLatLng, setPinLatLng] = useState<LatLng | undefined>();
-
-  const initPosition: LatLng = {
-    lat: 35.69575,
-    lng: 139.77521,
-  };
-
   const [loading, setLoading] = useState<boolean>(false);
   const [notification, setNotification] = useState<NotificationToast>({
     show: false,
@@ -32,16 +22,17 @@ const Home = (): ReactElement => {
     googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY,
   });
 
-  const onChange = (e: ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
-    setSelectedIdols({
-      ...selectedIdols,
-      [e.target.name]: e.target.value,
-    });
+  const { control, register, handleSubmit } = useForm<SelectedIdols>();
+
+  const initPosition: LatLng = {
+    lat: 35.69575,
+    lng: 139.77521,
   };
 
-  const onSubmitIdols = async () => {
+  const onSubmit: SubmitHandler<SelectedIdols> = async (values) => {
+    console.log(values);
     setNotification({ ...notification, show: false });
-    const arrayIdols = [selectedIdols.idol1, selectedIdols.idol2, selectedIdols.idol3];
+    const arrayIdols = [values.idol1, values.idol2, values.idol3];
 
     if (
       arrayIdols[0] == arrayIdols[1] ||
@@ -109,9 +100,10 @@ const Home = (): ReactElement => {
           initPosition={initPosition}
           isLoaded={isLoaded}
           loading={loading}
-          selectedIdols={selectedIdols}
-          onChange={onChange}
-          onSubmitIdols={onSubmitIdols}
+          register={register}
+          control={control}
+          handleSubmit={handleSubmit}
+          onSubmit={onSubmit}
         />
       </Layout>
     </>
