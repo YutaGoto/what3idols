@@ -15,12 +15,12 @@
     "@google-cloud/bigquery": "^5.11.0",
     "@react-google-maps/api": "^2.7.0",
     "bulma": "^0.9.4",
-    "next": "^12.2.3",
+    "next": "^12.2.5",
     "react": "^18.2.0",
     "react-bulma-components": "^4.1.0",
     "react-dom": "^18.2.0",
-    "react-hook-form": "^7.33.1",
-    "sass": "^1.54.0"
+    "react-hook-form": "^7.34.2",
+    "sass": "^1.54.5"
   },
   "devDependencies": {
     "@types/google.maps": "^3.48.2",
@@ -29,17 +29,17 @@
     "@types/react": "^17.0.39",
     "@typescript-eslint/eslint-plugin": "^5.15.0",
     "@typescript-eslint/parser": "^5.15.0",
-    "eslint": "^8.20.0",
-    "eslint-config-next": "^12.2.3",
+    "eslint": "^8.22.0",
+    "eslint-config-next": "^12.2.5",
     "eslint-config-prettier": "^8.5.0",
-    "eslint-import-resolver-typescript": "^3.3.0",
+    "eslint-import-resolver-typescript": "^3.5.0",
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-jsx-a11y": "^6.6.1",
     "eslint-plugin-prettier": "^4.2.1",
-    "eslint-plugin-react": "^7.30.1",
+    "eslint-plugin-react": "^7.31.0",
     "prettier": "^2.7.1",
     "typescript": "^4.7.4",
-    "vercel": "^27.2.0"
+    "vercel": "^28.1.4"
   },
   "packageManager": "yarn@3.2.0"
 }
