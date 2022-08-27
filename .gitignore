@@ -36,6 +36,9 @@ yarn-error.log*
 # tmpfile
 tmp/
 
+# csv data
+dataScripts/
+
 # yarn3 with Zero-install
 .yarn/*
 !.yarn/cache
