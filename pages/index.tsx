@@ -30,15 +30,10 @@ const Home = (): ReactElement => {
   };
 
   const onSubmit: SubmitHandler<SelectedIdols> = async (values) => {
-    console.log(values);
     setNotification({ ...notification, show: false });
-    const arrayIdols = [values.idol1, values.idol2, values.idol3];
+    const idols = [values.idol1, values.idol2, values.idol3];
 
-    if (
-      arrayIdols[0] == arrayIdols[1] ||
-      arrayIdols[1] == arrayIdols[2] ||
-      arrayIdols[2] == arrayIdols[0]
-    ) {
+    if (idols[0] == idols[1] || idols[1] == idols[2] || idols[2] == idols[0]) {
       setNotification({
         show: true,
         type: 'warning',
@@ -47,7 +42,7 @@ const Home = (): ReactElement => {
       return;
     }
 
-    if (arrayIdols.includes('')) {
+    if (idols.includes('')) {
       setNotification({
         show: true,
         type: 'warning',
@@ -58,7 +53,10 @@ const Home = (): ReactElement => {
     setLoading(true);
     await fetch('/api/idol2map', {
       method: 'POST',
-      body: arrayIdols.join(','),
+      body: JSON.stringify({ idols }),
+      headers: {
+        'Content-Type': 'application/json',
+      },
     })
       .then((res) => {
         setLoading(false);
