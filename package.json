@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "@google-cloud/bigquery": "^5.11.0",
+    "@hookform/error-message": "^2.0.0",
     "@react-google-maps/api": "^2.7.0",
     "bulma": "^0.9.4",
     "next": "^12.3.1",

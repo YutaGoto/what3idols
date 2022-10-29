@@ -180,6 +180,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@hookform/error-message@npm:^2.0.0":
+  version: 2.0.0
+  resolution: "@hookform/error-message@npm:2.0.0"
+  peerDependencies:
+    react: ">=16.8.0"
+    react-dom: ">=16.8.0"
+    react-hook-form: ^7.0.0
+  checksum: 84aa3a6cb5cc729581850dcbe2bb5dfa43431c148782b4e8676757f808cd81e220fbc4e709c4eee381b0168a991c3a3f5306acae2a09a9760859c9a188d591ec
+  languageName: node
+  linkType: hard
+
 "@humanwhocodes/config-array@npm:^0.10.5":
   version: 0.10.7
   resolution: "@humanwhocodes/config-array@npm:0.10.7"
@@ -5855,6 +5866,7 @@ __metadata:
   resolution: "what3idols@workspace:."
   dependencies:
     "@google-cloud/bigquery": ^5.11.0
+    "@hookform/error-message": ^2.0.0
     "@react-google-maps/api": ^2.7.0
     "@types/google.maps": ^3.48.2
     "@types/node": ^17.0.21
