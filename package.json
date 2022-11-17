@@ -21,7 +21,7 @@
     "react-bulma-components": "^4.1.0",
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.39.4",
-    "sass": "^1.55.0"
+    "sass": "^1.56.1"
   },
   "devDependencies": {
     "@types/google.maps": "^3.48.2",
