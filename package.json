@@ -20,7 +20,7 @@
     "react": "^18.2.0",
     "react-bulma-components": "^4.1.0",
     "react-dom": "^18.2.0",
-    "react-hook-form": "^7.39.4",
+    "react-hook-form": "^7.41.0",
     "sass": "^1.56.2"
   },
   "devDependencies": {
