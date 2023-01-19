@@ -4862,12 +4862,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-hook-form@npm:^7.39.4":
-  version: 7.39.4
-  resolution: "react-hook-form@npm:7.39.4"
+"react-hook-form@npm:^7.42.1":
+  version: 7.42.1
+  resolution: "react-hook-form@npm:7.42.1"
   peerDependencies:
     react: ^16.8.0 || ^17 || ^18
-  checksum: 767337330a9ce305296adb435e05380fb138308931a0ca20f7a681604acf16a978f14f48d52279fb2eccc690f808622fa4db019835fd0e4fd6a768d2c13b83d0
+  checksum: f0dcf5d7f6f90b4ba5efe58ce14b7adda6f2327c80c444df259c31d8bc785e823c9ec77c27a4f1db5bef70992235ae420acd190b1c767bec2c7fb8d11d639880
   languageName: node
   linkType: hard
 
@@ -5903,7 +5903,7 @@ __metadata:
     react: ^18.2.0
     react-bulma-components: ^4.1.0
     react-dom: ^18.2.0
-    react-hook-form: ^7.39.4
+    react-hook-form: ^7.42.1
     sass: ^1.56.2
     typescript: ^4.9.3
     vercel: ^28.5.3
