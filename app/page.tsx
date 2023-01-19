@@ -1,3 +1,5 @@
+'use client';
+
 import { ErrorMessage } from '@hookform/error-message';
 import { useJsApiLoader, GoogleMap, Marker } from '@react-google-maps/api';
 import React, { ReactElement, useState } from 'react';
