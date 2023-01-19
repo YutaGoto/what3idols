@@ -399,9 +399,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@react-google-maps/api@npm:^2.17.0":
-  version: 2.17.0
-  resolution: "@react-google-maps/api@npm:2.17.0"
+"@react-google-maps/api@npm:^2.17.1":
+  version: 2.17.1
+  resolution: "@react-google-maps/api@npm:2.17.1"
   dependencies:
     "@googlemaps/js-api-loader": 1.15.1
     "@googlemaps/markerclusterer": 2.0.13
@@ -412,7 +412,7 @@ __metadata:
   peerDependencies:
     react: ^16.8 || ^17 || ^18
     react-dom: ^16.8 || ^17 || ^18
-  checksum: f74de35f2713efa5fb48e8631958a06a8d4ddae41d6fc563ac9bd831a19e8e7045e0a5791d0ecb123dfac06f9cb03fbde28c4b31a9461472175cf7e504d538de
+  checksum: 033f3dab06ffb0faf63aea21cb22f3d1ca1b141fa020c8e69e512615a8c6b5da1c7e304afc5e48c75f782c7efd7b8d197ea2897400314fc56084d59026ea9bb0
   languageName: node
   linkType: hard
 
@@ -5882,7 +5882,7 @@ __metadata:
   dependencies:
     "@google-cloud/bigquery": ^6.0.3
     "@hookform/error-message": ^2.0.1
-    "@react-google-maps/api": ^2.17.0
+    "@react-google-maps/api": ^2.17.1
     "@types/google.maps": ^3.51.0
     "@types/node": ^18.11.9
     "@types/prettier": ^2.7.1
