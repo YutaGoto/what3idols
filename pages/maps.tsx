@@ -1,6 +1,7 @@
-import React, { ReactElement, useState } from 'react';
 import { useJsApiLoader } from '@react-google-maps/api';
+import React, { ReactElement, useState } from 'react';
 import { Button, Notification } from 'react-bulma-components';
+
 import { Layout, Meta } from '../components';
 import MapsComponent from '../components/pages/Maps';
 import { LatLng, NotificationToast } from '../types/Type';

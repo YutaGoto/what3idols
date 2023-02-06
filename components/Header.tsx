@@ -1,6 +1,6 @@
+import Image from 'next/image';
 import React, { useState, VFC } from 'react';
 import { Heading, Navbar } from 'react-bulma-components';
-import Image from 'next/image';
 
 const Header: VFC = () => {
   const [openMenu, setOpenMenu] = useState<boolean>(false);

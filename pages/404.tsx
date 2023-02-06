@@ -1,6 +1,7 @@
 import { GoogleMap, InfoWindow, useJsApiLoader } from '@react-google-maps/api';
 import { CSSProperties, useEffect, useState } from 'react';
 import { Button, Container, Content, Section } from 'react-bulma-components';
+
 import { Layout, Meta } from '../components';
 import { LatLng } from '../types/Type';
 import idols from '../utils/idols.json';
