@@ -9,7 +9,7 @@ jobs:
     working_directory: ~/what3idols
     executor:
       name: node/default
-      tag: '	'
+      tag: '18.14'
     steps:
       - checkout
       - node/install-packages:
