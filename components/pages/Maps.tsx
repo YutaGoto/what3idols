@@ -1,6 +1,7 @@
-import { Container, Section } from 'react-bulma-components';
 import { GoogleMap, InfoWindow } from '@react-google-maps/api';
 import { NextComponentType, NextPageContext } from 'next/types';
+import { Container, Section } from 'react-bulma-components';
+
 import { LatLng } from '../../types/Type';
 
 interface MapsProps {

@@ -1,5 +1,6 @@
 import { NextComponentType, NextPageContext } from 'next/types';
 import { ReactNode } from 'react';
+
 import { Footer, Header } from '.';
 
 interface LayoutProps {

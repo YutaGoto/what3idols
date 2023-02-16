@@ -1,5 +1,6 @@
 import { BigQuery } from '@google-cloud/bigquery';
 import type { NextApiRequest, NextApiResponse } from 'next';
+
 import { LatLng } from '../../types/Type';
 
 const credential = JSON.parse(
