@@ -1,22 +1,11 @@
-<<<<<<< HEAD:app/maps/page.tsx
 'use client';
 
 import React, { ReactElement, useState } from 'react';
-=======
->>>>>>> main:pages/maps.tsx
 import { useJsApiLoader } from '@react-google-maps/api';
-import React, { ReactElement, useState } from 'react';
 import { Button, Notification } from 'react-bulma-components';
-<<<<<<< HEAD:app/maps/page.tsx
 import { Layout, Meta } from '../../components';
 import MapsComponent from '../../components/pages/Maps';
 import { LatLng, NotificationToast } from '../../types/Type';
-=======
-
-import { Layout, Meta } from '../components';
-import MapsComponent from '../components/pages/Maps';
-import { LatLng, NotificationToast } from '../types/Type';
->>>>>>> main:pages/maps.tsx
 
 const Maps = (): ReactElement => {
   const [content, setContent] = useState<string>('');
