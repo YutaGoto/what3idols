@@ -4,7 +4,7 @@ import '../styles/globals.scss';
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="jp">
+    <html lang="ja">
       <head>
         <title>What3Idols</title>
       </head>
