@@ -1,5 +1,5 @@
-import React, { VFC } from 'react';
 import Head from 'next/head';
+import React, { VFC } from 'react';
 
 interface Props {
   description: string;

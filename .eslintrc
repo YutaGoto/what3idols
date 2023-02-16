@@ -10,6 +10,7 @@
           "typescript": {}
         }
       },
+      "plugins": ["import", "unused-imports"],
       "env": {
         "browser": true,
         "node": true,
@@ -21,7 +22,18 @@
         "plugin:@typescript-eslint/recommended",
         "plugin:jsx-a11y/recommended",
         "plugin:prettier/recommended"
-      ]
+      ],
+      "rules": {
+        "@typescript-eslint/no-unused-vars": "off",
+        "unused-imports/no-unused-imports": "warn",
+        "import/order": [
+          "warn",
+          {
+            "newlines-between": "always",
+            "alphabetize": { "order": "asc", "caseInsensitive": true }
+          }
+        ]
+      }
     }
   ]
 }
