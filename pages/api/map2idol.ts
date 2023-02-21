@@ -1,7 +1,8 @@
 import { BigQuery } from '@google-cloud/bigquery';
-import type { NextApiRequest, NextApiResponse } from 'next';
 
 import { LatLng } from '../../types/Type';
+
+import type { NextApiRequest, NextApiResponse } from 'next';
 
 const credential = JSON.parse(
   Buffer.from(process.env.GOOGLE_APPLICATION_CREDENTIALS, 'base64').toString()
