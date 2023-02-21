@@ -30,6 +30,7 @@
           "warn",
           {
             "newlines-between": "always",
+            "groups": ["builtin", "external", "parent", "sibling", "index", "object", "type"],
             "alphabetize": { "order": "asc", "caseInsensitive": true }
           }
         ]

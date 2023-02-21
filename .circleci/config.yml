@@ -9,13 +9,11 @@ jobs:
     working_directory: ~/what3idols
     executor:
       name: node/default
-      tag: '18.14-browsers'
+      tag: '18.5-browsers'
     steps:
       - checkout
       - node/install-packages:
-          check-cache: always
           pkg-manager: yarn-berry
-          with-cache: false
       - run:
           name: lint
           command: yarn lint
@@ -23,13 +21,11 @@ jobs:
     working_directory: ~/what3idols
     executor:
       name: node/default
-      tag: '18.14-browsers'
+      tag: '18.5-browsers'
     steps:
       - checkout
       - node/install-packages:
-          check-cache: always
           pkg-manager: yarn-berry
-          with-cache: false
       - run:
           name: deploy
           command: yarn deploy
