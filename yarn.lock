@@ -611,14 +611,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react@npm:^18.0.25":
-  version: 18.0.25
-  resolution: "@types/react@npm:18.0.25"
+"@types/react@npm:^18.0.29":
+  version: 18.0.29
+  resolution: "@types/react@npm:18.0.29"
   dependencies:
     "@types/prop-types": "*"
     "@types/scheduler": "*"
     csstype: ^3.0.2
-  checksum: 231d658c45abdef044a716b4502774f1585d8336d73b2f5bd68f181acbfc874b7a457686ecd29b415b43ed0922c309bab7e2cf96832d188a3f4f1b02f2af760a
+  checksum: 75f56f81d80a1c15ee3fcd2039bdc5f7a70f49cf69827ee0fc8beece9809b234f245dd62552e91018d8f25792986bd513b44caf054554d5c5eb979a5f9460214
   languageName: node
   linkType: hard
 
@@ -6457,7 +6457,7 @@ __metadata:
     "@types/google.maps": ^3.51.0
     "@types/node": ^18.15.3
     "@types/prettier": ^2.7.2
-    "@types/react": ^18.0.25
+    "@types/react": ^18.0.29
     "@typescript-eslint/eslint-plugin": ^5.55.0
     "@typescript-eslint/parser": ^5.55.0
     bulma: ^0.9.4
