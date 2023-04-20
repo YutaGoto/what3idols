@@ -1,35 +1,45 @@
+import { Pane } from 'evergreen-ui';
 import Image from 'next/image';
-import React, { useState, VFC } from 'react';
-import { Heading, Navbar } from 'react-bulma-components';
+import { FC } from 'react';
 
-const Header: VFC = () => {
-  const [openMenu, setOpenMenu] = useState<boolean>(false);
-
+const Header: FC = () => {
   return (
-    <Navbar active={openMenu} transparent={false}>
-      <Navbar.Brand>
-        <Navbar.Item renderAs="a" href="#">
-          <Heading>
-            <Image src="/logo.svg" alt="What3Idols" width={250} height={50} />
-          </Heading>
-        </Navbar.Item>
-        <Navbar.Burger
-          onClick={() => {
-            setOpenMenu(!openMenu);
-          }}
-        />
-      </Navbar.Brand>
-      <Navbar.Menu>
-        <Navbar.Container>
-          <Navbar.Item renderAs="a" href="/">
-            <>Idols to Map</>
-          </Navbar.Item>
-          <Navbar.Item renderAs="a" href="/maps">
-            <>Map to Idols</>
-          </Navbar.Item>
-        </Navbar.Container>
-      </Navbar.Menu>
-    </Navbar>
+    <Pane
+      is="nav"
+      display="flex"
+      alignItems="center"
+      justifyContent="space-between"
+      padding={16}
+      background="nav-background-color"
+      borderBottom="muted"
+    >
+      <Image src="/logo.svg" alt="What3Idols" width={250} height={50} />
+      <Pane display="flex" alignItems="end">
+        <Pane
+          is="a"
+          href="/"
+          display="flex"
+          alignItems="end"
+          padding={16}
+          color="inherit"
+          textDecoration="none"
+        >
+          Idols to Map
+        </Pane>
+
+        <Pane
+          is="a"
+          href="/maps"
+          display="flex"
+          alignItems="end"
+          padding={16}
+          color="inherit"
+          textDecoration="none"
+        >
+          Map to Idols
+        </Pane>
+      </Pane>
+    </Pane>
   );
 };
 
