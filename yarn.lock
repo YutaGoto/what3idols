@@ -525,10 +525,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/google.maps@npm:^3.52.4":
-  version: 3.52.4
-  resolution: "@types/google.maps@npm:3.52.4"
-  checksum: b93be1bb53b835c3f3a216956f316a51f6931cfa2ea0d2de3d4a1b00c43ba5597cf0f11a7e5c54b5a7a698ded4774eb6ef1c5dc5dc20cff1dd564d5810070c03
+"@types/google.maps@npm:^3.52.6":
+  version: 3.52.6
+  resolution: "@types/google.maps@npm:3.52.6"
+  checksum: 3ab6e3739fe7ecb5393596880a72c7f68cdb50f603305e4b61840d47d2d7bdb1efe65055f8dbebc666464dbeed3f0fbf6d6ca31507f20cd328111676aea18dda
   languageName: node
   linkType: hard
 
@@ -6438,7 +6438,7 @@ __metadata:
     "@google-cloud/bigquery": ^6.1.0
     "@hookform/error-message": ^2.0.1
     "@react-google-maps/api": ^2.18.1
-    "@types/google.maps": ^3.52.4
+    "@types/google.maps": ^3.52.6
     "@types/node": ^18.15.3
     "@types/prettier": ^2.7.2
     "@types/react": ^18.0.37
