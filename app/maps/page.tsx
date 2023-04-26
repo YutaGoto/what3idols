@@ -1,12 +1,12 @@
 'use client';
 
-import { ReactElement, useState } from 'react';
 import { useJsApiLoader } from '@react-google-maps/api';
+import { Pane, toaster } from 'evergreen-ui';
+import { ReactElement, useState } from 'react';
 
 import { Layout, Meta } from '../../components';
 import MapsComponent from '../../components/pages/Maps';
 import { LatLng } from '../../types/Type';
-import { toaster } from 'evergreen-ui';
 
 const Maps = (): ReactElement => {
   const [content, setContent] = useState<string>('');
@@ -59,13 +59,17 @@ const Maps = (): ReactElement => {
     <>
       <Meta description="位置を選んでアイドルを見てみましょう" />
       <Layout>
-        <MapsComponent
-          isLoaded={isLoaded}
-          initPosition={initPosition}
-          onClick={onClick}
-          center={center}
-          content={content}
-        />
+        <Pane marginX="auto" width={960}>
+          <Pane marginY={10}>
+            <MapsComponent
+              isLoaded={isLoaded}
+              initPosition={initPosition}
+              onClick={onClick}
+              center={center}
+              content={content}
+            />
+          </Pane>
+        </Pane>
       </Layout>
     </>
   );
