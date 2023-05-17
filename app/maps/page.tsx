@@ -1,22 +1,18 @@
 'use client';
 
-import React, { ReactElement, useState } from 'react';
 import { useJsApiLoader } from '@react-google-maps/api';
-import { Button, Notification } from 'react-bulma-components';
+import { Pane, toaster } from 'evergreen-ui';
+import { ReactElement, useState } from 'react';
+
 import { Layout, Meta } from '../../components';
 import MapsComponent from '../../components/pages/Maps';
-import { LatLng, NotificationToast } from '../../types/Type';
+import { LatLng } from '../../types/Type';
 
 const Maps = (): ReactElement => {
   const [content, setContent] = useState<string>('');
   const [center, setCenter] = useState<LatLng>({
     lat: 35.69575,
     lng: 139.77521,
-  });
-  const [notification, setNotification] = useState<NotificationToast>({
-    show: false,
-    type: 'text',
-    body: '',
   });
 
   const initPosition: LatLng = {
@@ -32,7 +28,6 @@ const Maps = (): ReactElement => {
   });
 
   const onClick = async (e: google.maps.MapMouseEvent) => {
-    setNotification({ ...notification, show: false });
     const latLng: LatLng = e.latLng.toJSON();
     await fetch('/api/map2idol', {
       method: 'POST',
@@ -55,37 +50,26 @@ const Maps = (): ReactElement => {
       })
       .catch((err) => {
         console.error(err);
-        setNotification({
-          show: true,
-          type: 'danger',
-          body: 'エラーが発生しました',
-        });
+        toaster.danger('エラーが発生しました');
         return;
       });
-  };
-
-  const onNotificationClose = () => {
-    setNotification({ ...notification, show: false });
   };
 
   return (
     <>
       <Meta description="位置を選んでアイドルを見てみましょう" />
       <Layout>
-        {notification.show && (
-          <Notification color={notification.type}>
-            {notification.body}
-            <Button remove onClick={onNotificationClose} />
-          </Notification>
-        )}
-
-        <MapsComponent
-          isLoaded={isLoaded}
-          initPosition={initPosition}
-          onClick={onClick}
-          center={center}
-          content={content}
-        />
+        <Pane marginX="auto" width={960}>
+          <Pane marginY={10}>
+            <MapsComponent
+              isLoaded={isLoaded}
+              initPosition={initPosition}
+              onClick={onClick}
+              center={center}
+              content={content}
+            />
+          </Pane>
+        </Pane>
       </Layout>
     </>
   );

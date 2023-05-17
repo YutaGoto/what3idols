@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react';
 
-import '../../styles/globals.scss';
+import { RootProvider } from '../../providers/ThemeProvider';
 
 export default function Layout({ children }: { children: ReactNode }) {
   return (
@@ -8,7 +8,9 @@ export default function Layout({ children }: { children: ReactNode }) {
       <head>
         <title>What3Idols</title>
       </head>
-      <body>{children}</body>
+      <body>
+        <RootProvider>{children}</RootProvider>
+      </body>
     </html>
   );
 }

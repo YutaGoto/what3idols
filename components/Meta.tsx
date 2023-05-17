@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import React, { VFC } from 'react';
+import React, { FC } from 'react';
 
 interface Props {
   description: string;
@@ -7,7 +7,7 @@ interface Props {
   nofollow?: boolean;
 }
 
-const Meta: VFC<Props> = ({ description, noindex = false, nofollow = false }) => {
+const Meta: FC<Props> = ({ description, noindex = false, nofollow = false }) => {
   return (
     <Head>
       <meta property="og:title" content="What3Idols" />

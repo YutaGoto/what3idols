@@ -1,28 +1,23 @@
-import Image from 'next/image';
-import React, { VFC } from 'react';
-import { Footer as BulmaFooter, Container, Content, Columns } from 'react-bulma-components';
+import { Pane } from 'evergreen-ui';
+import { FC } from 'react';
 
-const Footer: VFC = () => {
+const Footer: FC = () => {
   return (
-    <BulmaFooter>
-      <Container>
-        <Content style={{ textAlign: 'center' }}>
-          <Columns>
-            <Columns.Column size={9}>
-              <p>
-                <strong>What 3 Idols</strong> by <a href="https://github.com/YutaGoto">Yuta Goto</a>
-                .
-              </p>
-            </Columns.Column>
-            <Columns.Column size={3}>
-              <a href="https://bulma.io">
-                <Image src="/made-with-bulma.png" alt="Made with Bulma" width={256} height={48} />
-              </a>
-            </Columns.Column>
-          </Columns>
-        </Content>
-      </Container>
-    </BulmaFooter>
+    <Pane
+      is="footer"
+      display="flex"
+      alignItems="center"
+      justifyContent="center"
+      padding={16}
+      background="nav-background-color"
+      borderTop="muted"
+    >
+      <Pane>
+        <p>
+          <strong>What 3 Idols</strong> by <a href="https://github.com/YutaGoto">Yuta Goto</a>.
+        </p>
+      </Pane>
+    </Pane>
   );
 };
 
