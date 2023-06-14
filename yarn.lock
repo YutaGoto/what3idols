@@ -121,12 +121,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@google-cloud/bigquery@npm:^6.1.0":
-  version: 6.1.0
-  resolution: "@google-cloud/bigquery@npm:6.1.0"
+"@google-cloud/bigquery@npm:^6.2.0":
+  version: 6.2.0
+  resolution: "@google-cloud/bigquery@npm:6.2.0"
   dependencies:
     "@google-cloud/common": ^4.0.0
     "@google-cloud/paginator": ^4.0.0
+    "@google-cloud/precise-date": ^3.0.1
     "@google-cloud/promisify": ^3.0.0
     arrify: ^2.0.1
     big.js: ^6.0.0
@@ -137,7 +138,7 @@ __metadata:
     readable-stream: ^4.0.0
     stream-events: ^1.0.5
     uuid: ^9.0.0
-  checksum: a6b9aa30fe5e6ab1f3b3523aa46392f2c7606c4892f5537b0a2dd21b96cf529586841078c868c1a5a4d48ba4105451ca611d7a2f429f1f31dcc588513aadf3ff
+  checksum: c298b7fadd3de82ef8895c4830d7f54a5830f9b45a2cd9ee3891d17cf893f95113f8865ff2df10c87c0c79769f18278045fdb3c2f4f38aa43e7169dae069d191
   languageName: node
   linkType: hard
 
@@ -165,6 +166,13 @@ __metadata:
     arrify: ^2.0.0
     extend: ^3.0.2
   checksum: 40ecfb59512ddbb76ca377cb96b61673d8d210397723dcaac41d8a553264bf0c09d3754db25dd3c476f8d85941b5017cc158b4e81c8c6a054aea020c32a1e4ba
+  languageName: node
+  linkType: hard
+
+"@google-cloud/precise-date@npm:^3.0.1":
+  version: 3.0.1
+  resolution: "@google-cloud/precise-date@npm:3.0.1"
+  checksum: 5f99a8a67909b4b2b66b580821a96f780f55660e096b3eebeae067b6391f8c904866220aa1c2426b67be5e5567818fc565dd44f60173b4f58a713e8fb0d90705
   languageName: node
   linkType: hard
 
@@ -6630,7 +6638,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "what3idols@workspace:."
   dependencies:
-    "@google-cloud/bigquery": ^6.1.0
+    "@google-cloud/bigquery": ^6.2.0
     "@hookform/error-message": ^2.0.1
     "@react-google-maps/api": ^2.18.1
     "@types/google.maps": ^3.53.1
