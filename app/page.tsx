@@ -23,7 +23,7 @@ const Home = (): ReactElement => {
     id: 'google-map-script',
     language: 'ja',
     region: 'JP',
-    googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY,
+    googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY as string,
   });
 
   const {
