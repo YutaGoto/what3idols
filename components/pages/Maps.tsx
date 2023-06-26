@@ -1,5 +1,4 @@
 import { GoogleMap, InfoWindow } from '@react-google-maps/api';
-import { NextComponentType, NextPageContext } from 'next/types';
 
 import { LatLng } from '../../types/Type';
 
@@ -16,13 +15,7 @@ const containerStyle = {
   height: '60vh',
 };
 
-const MapsComponent: NextComponentType<NextPageContext, null, MapsProps> = ({
-  isLoaded,
-  initPosition,
-  onClick,
-  center,
-  content,
-}) => {
+const MapsComponent = ({ isLoaded, initPosition, onClick, center, content }: MapsProps) => {
   return (
     <div>
       {isLoaded && (

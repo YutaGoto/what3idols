@@ -24,11 +24,11 @@ const Maps = (): ReactElement => {
     id: 'google-map-script',
     language: 'ja',
     region: 'JP',
-    googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY,
+    googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY as string,
   });
 
   const onClick = async (e: google.maps.MapMouseEvent) => {
-    const latLng: LatLng = e.latLng.toJSON();
+    const latLng = e.latLng?.toJSON();
     await fetch('/api/map2idol', {
       method: 'POST',
       body: JSON.stringify(latLng),
@@ -44,8 +44,8 @@ const Maps = (): ReactElement => {
 
         setContent(idolsData.join(', '));
         setCenter({
-          lat: latLng.lat,
-          lng: latLng.lng,
+          lat: latLng?.lat || initPosition.lat,
+          lng: latLng?.lng || initPosition.lng,
         });
       })
       .catch((err) => {
