@@ -171,7 +171,7 @@ const Home = (): ReactElement => {
                   mapId: process.env.GOOGLE_MAPS_MAP_ID,
                 }}
               >
-                <Marker position={pinLatLng} />
+                <Marker position={pinLatLng || initPosition} />
               </GoogleMap>
             )}
           </Pane>
