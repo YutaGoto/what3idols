@@ -5953,9 +5953,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"evergreen-ui@npm:^7.1.6":
-  version: 7.1.6
-  resolution: "evergreen-ui@npm:7.1.6"
+"evergreen-ui@npm:^7.1.9":
+  version: 7.1.9
+  resolution: "evergreen-ui@npm:7.1.9"
   dependencies:
     "@babel/runtime": ^7.1.2
     "@segment/react-tiny-virtual-list": ^2.2.1
@@ -5973,12 +5973,12 @@ __metadata:
     prop-types: ^15.6.2
     react-fast-compare: ^3.2.0
     react-transition-group: ^4.4.1
-    ui-box: ^5.4.0
+    ui-box: ^5.4.1
   peerDependencies:
     react: ^16.8.0 || ^17.0.0 || ^18.0.0
     react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
     react-is: ^16.8.0 || ^17.0.0 || ^18.0.0
-  checksum: f27e68e479397080528a3cdc7a13460e9b3aff0b5e4d06554d5909c827ec056e7f8d38c5061166a93925b50cbfea889a2538528c56d18f952c00e480d67d865b
+  checksum: 36c630ee28ef45026d22a361149b0515578d7cad5dea0f7368d7ea190c673d6da85cd84e33b97fe7125a64b962149ee0c1cbc37a4a9df9269176ccab4f775e24
   languageName: node
   linkType: hard
 
@@ -11701,7 +11701,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ui-box@npm:^5.4.0":
+"ui-box@npm:^5.4.1":
   version: 5.4.1
   resolution: "ui-box@npm:5.4.1"
   dependencies:
@@ -12136,7 +12136,7 @@ __metadata:
     eslint-plugin-prettier: ^4.2.1
     eslint-plugin-react: ^7.32.2
     eslint-plugin-unused-imports: ^2.0.0
-    evergreen-ui: ^7.1.6
+    evergreen-ui: ^7.1.9
     next: ^13.4.2
     prettier: ^2.8.8
     react: ^18.2.0
