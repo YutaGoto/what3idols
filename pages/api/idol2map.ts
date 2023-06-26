@@ -3,7 +3,7 @@ import { BigQuery } from '@google-cloud/bigquery';
 import type { NextApiRequest, NextApiResponse } from 'next';
 
 const credential = JSON.parse(
-  Buffer.from(process.env.GOOGLE_APPLICATION_CREDENTIALS, 'base64').toString()
+  Buffer.from(process.env.GOOGLE_APPLICATION_CREDENTIALS as string, 'base64').toString()
 );
 
 const bigquery = new BigQuery({
