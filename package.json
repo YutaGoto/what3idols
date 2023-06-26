@@ -42,7 +42,7 @@
     "eslint-plugin-unused-imports": "^2.0.0",
     "prettier": "^2.8.8",
     "typescript": "^5.0.4",
-    "vercel": "^28.5.3"
+    "vercel": "^30.2.3"
   },
   "packageManager": "yarn@3.2.0"
 }
