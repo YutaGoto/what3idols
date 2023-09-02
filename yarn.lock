@@ -2665,10 +2665,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:^18.16.18":
-  version: 18.16.18
-  resolution: "@types/node@npm:18.16.18"
-  checksum: d32d8a0a04cd3f5ecb361bcb42f3a07623881ac90d680e06bf626defb3c663a94860d11690babe607cfe67265eceeb8a59ba5fe40c0e49f5a1b01e0088640469
+"@types/node@npm:^20.5.8":
+  version: 20.5.8
+  resolution: "@types/node@npm:20.5.8"
+  checksum: ccd73e0e99ddfcf42e10b7a30a58a432bc39eeb9d1d59084ed818be468e05375b212a29d03529149aff58366c0eddb9bf367cb335db6620a4855ce315c5ecf28
   languageName: node
   linkType: hard
 
@@ -12583,7 +12583,7 @@ __metadata:
     "@hookform/error-message": ^2.0.1
     "@react-google-maps/api": ^2.18.1
     "@types/google.maps": ^3.53.4
-    "@types/node": ^18.16.18
+    "@types/node": ^20.5.8
     "@types/prettier": ^2.7.2
     "@types/react": ^18.2.14
     "@typescript-eslint/eslint-plugin": ^5.59.0
