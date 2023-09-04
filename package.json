@@ -22,7 +22,7 @@
     "react-bulma-components": "^4.1.0",
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.43.9",
-    "sass": "^1.63.6"
+    "sass": "^1.66.1"
   },
   "devDependencies": {
     "@types/google.maps": "^3.53.4",
