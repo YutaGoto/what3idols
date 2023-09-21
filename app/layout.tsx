@@ -1,3 +1,4 @@
+import { Analytics } from '@vercel/analytics/react';
 import React, { ReactNode } from 'react';
 
 import { RootProvider } from '../providers/ThemeProvider';
@@ -10,6 +11,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       </head>
       <body>
         <RootProvider>{children}</RootProvider>
+        <Analytics />
       </body>
     </html>
   );
