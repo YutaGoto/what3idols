@@ -1,3 +1,19 @@
+$bp: (
+  mobile: 480px,
+  tablet: 768px,
+  desktop: 1440px,
+);
+
+@mixin query($display) {
+  @each $key, $value in $bp {
+    @if ($display == $key) {
+      @media (max-width: $value) {
+        @content;
+      }
+    }
+  }
+}
+
 html,
 body {
   padding: 0;
@@ -9,6 +25,14 @@ body {
 a {
   color: inherit;
   text-decoration: none;
+}
+
+.form-selects {
+  flex-direction: row;
+
+  @include query(mobile) {
+    flex-direction: column;
+  }
 }
 
 * {

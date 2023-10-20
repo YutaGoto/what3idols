@@ -79,16 +79,18 @@ const Home = (): ReactElement => {
     <>
       <Meta description="アイドルを3人選んで位置を特定しましょう" />
       <Layout>
-        <Pane marginX="auto" width={960}>
+        <Pane marginX="auto">
           <form onSubmit={handleSubmit(onSubmit)}>
             <Pane
+              className="form-selects"
               display="flex"
-              flexDirection="row"
-              justifyContent="space-between"
+              justifyContent="space-evenly"
               alignItems="center"
+              gap={20}
               marginY={20}
+              marginX={20}
             >
-              <Pane>
+              <Pane width="100%">
                 <Controller
                   name="idol1"
                   control={control}
@@ -109,7 +111,7 @@ const Home = (): ReactElement => {
                   render={({ message }) => <>{message}</>}
                 />
               </Pane>
-              <Pane>
+              <Pane width="100%">
                 <Controller
                   name="idol2"
                   control={control}
@@ -131,7 +133,7 @@ const Home = (): ReactElement => {
                 />
               </Pane>
 
-              <Pane>
+              <Pane width="100%">
                 <Controller
                   name="idol3"
                   control={control}
@@ -154,7 +156,7 @@ const Home = (): ReactElement => {
               </Pane>
             </Pane>
 
-            <Pane>
+            <Pane marginX={20}>
               <Button appearance="primary" isLoading={loading}>
                 What3Idols!!!
               </Button>
