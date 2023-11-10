@@ -13,7 +13,9 @@ jobs:
     steps:
       - checkout
       - node/install-packages:
+          check-cache: always
           pkg-manager: yarn-berry
+          with-cache: false
       - run:
           name: lint
           command: yarn lint
@@ -25,7 +27,9 @@ jobs:
     steps:
       - checkout
       - node/install-packages:
+          check-cache: always
           pkg-manager: yarn-berry
+          with-cache: false
       - run:
           name: deploy
           command: yarn deploy
