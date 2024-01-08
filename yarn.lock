@@ -647,10 +647,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:^20.6.3":
-  version: 20.6.3
-  resolution: "@types/node@npm:20.6.3"
-  checksum: 444a6f1f41cfa8d3e20ce0108e6e43960fb2ae0e481f233bb1c14d6252aa63a92e021de561cd317d9fdb411688f871065f40175a1f18763282dee2613a08f8a3
+"@types/node@npm:^20.10.7":
+  version: 20.10.7
+  resolution: "@types/node@npm:20.10.7"
+  dependencies:
+    undici-types: ~5.26.4
+  checksum: 86f4f96f5169538f47bbd652ab8e3712cd307701481ff3e9ce0c1ea7d8424a38b5ac4a1d33088cdd9ea1bfe68fd27bbae005a21969aa6d9a36295904da6f09f2
   languageName: node
   linkType: hard
 
@@ -6155,6 +6157,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"undici-types@npm:~5.26.4":
+  version: 5.26.5
+  resolution: "undici-types@npm:5.26.5"
+  checksum: 3192ef6f3fd5df652f2dc1cd782b49d6ff14dc98e5dced492aa8a8c65425227da5da6aafe22523c67f035a272c599bb89cfe803c1db6311e44bed3042fc25487
+  languageName: node
+  linkType: hard
+
 "undici@npm:5.23.0":
   version: 5.23.0
   resolution: "undici@npm:5.23.0"
@@ -6274,7 +6283,7 @@ __metadata:
     "@hookform/error-message": ^2.0.1
     "@react-google-maps/api": ^2.18.1
     "@types/google.maps": ^3.53.4
-    "@types/node": ^20.6.3
+    "@types/node": ^20.10.7
     "@types/prettier": ^2.7.2
     "@types/react": ^18.2.14
     "@typescript-eslint/eslint-plugin": ^6.7.2
