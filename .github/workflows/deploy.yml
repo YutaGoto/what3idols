@@ -33,4 +33,4 @@ jobs:
       - name: Install dependencies
         run: pnpm install
       - name: run deploy to vercel
-        run: pnpm deploy-vercel
+        run: pnpm deploy-vercel --token ${{ secrets.VERCEL_TOKEN }} --prod --yes
