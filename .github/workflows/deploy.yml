@@ -2,7 +2,8 @@ name: Deploy to vercel
 
 on:
   push:
-    - main
+    # branches:
+    #   - main
 
 jobs:
   deploy:
@@ -33,4 +34,3 @@ jobs:
         run: pnpm install
       - name: run deploy
         run: pnpm deploy
-
