@@ -32,5 +32,5 @@ jobs:
             ${{ runner.os }}-pnpm-store-
       - name: Install dependencies
         run: pnpm install
-      - name: run deploy
-        run: pnpm deploy
+      - name: run deploy to vercel
+        run: pnpm deploy-vercel
