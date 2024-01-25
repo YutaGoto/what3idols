@@ -9,7 +9,7 @@
     "lint": "next lint",
     "tsc": "tsc -p . --noEmit",
     "format": "prettier --write ./",
-    "deploy": "vercel --token $VERCEL_TOKEN --prod --yes"
+    "deploy-vercel": "vercel"
   },
   "dependencies": {
     "@google-cloud/bigquery": "^7.3.0",

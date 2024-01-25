@@ -3,7 +3,7 @@
 > アイドルで位置情報を伝える
 
 ![Vercel](http://therealsujitk-vercel-badge.vercel.app/?app=what3idols)
-[![CircleCI](https://circleci.com/gh/YutaGoto/what3idols/tree/main.svg?style=svg)](https://circleci.com/gh/YutaGoto/what3idols/tree/main)
+[![Deploy to vercel](https://github.com/YutaGoto/what3idols/actions/workflows/deploy.yml/badge.svg)](https://github.com/YutaGoto/what3idols/actions/workflows/deploy.yml)[![Deploy to vercel](https://github.com/YutaGoto/what3idols/actions/workflows/deploy.yml/badge.svg)](https://github.com/YutaGoto/what3idols/actions/workflows/deploy.yml)
 
 ![what3idols](./public/logo.png)
 
