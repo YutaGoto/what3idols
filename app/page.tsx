@@ -1,7 +1,7 @@
 'use client';
 
 import { ErrorMessage } from '@hookform/error-message';
-import { useJsApiLoader, GoogleMap, Marker } from '@react-google-maps/api';
+import { Map, Marker } from '@vis.gl/react-google-maps';
 import { Pane, Button, SelectField, toaster } from 'evergreen-ui';
 import { ReactElement, useState } from 'react';
 import { Controller, SubmitHandler, useForm } from 'react-hook-form';
@@ -18,13 +18,6 @@ const containerStyle = {
 const Home = (): ReactElement => {
   const [pinLatLng, setPinLatLng] = useState<LatLng | undefined>();
   const [loading, setLoading] = useState<boolean>(false);
-
-  const { isLoaded } = useJsApiLoader({
-    id: 'google-map-script',
-    language: 'ja',
-    region: 'JP',
-    googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY as string,
-  });
 
   const {
     control,
@@ -164,18 +157,9 @@ const Home = (): ReactElement => {
           </form>
 
           <Pane marginY={10}>
-            {isLoaded && (
-              <GoogleMap
-                mapContainerStyle={containerStyle}
-                zoom={10}
-                center={pinLatLng || initPosition}
-                options={{
-                  mapId: process.env.GOOGLE_MAPS_MAP_ID,
-                }}
-              >
-                <Marker position={pinLatLng || initPosition} />
-              </GoogleMap>
-            )}
+            <Map style={containerStyle} defaultZoom={10} defaultCenter={pinLatLng || initPosition}>
+              <Marker position={pinLatLng || initPosition} />
+            </Map>
           </Pane>
         </Pane>
       </Layout>

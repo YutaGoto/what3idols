@@ -1,6 +1,6 @@
 'use client';
 
-import { useJsApiLoader } from '@react-google-maps/api';
+import { MapMouseEvent } from '@vis.gl/react-google-maps';
 import { Pane, toaster } from 'evergreen-ui';
 import { ReactElement, useState } from 'react';
 
@@ -20,15 +20,9 @@ const Maps = (): ReactElement => {
     lng: 139.77521,
   };
 
-  const { isLoaded } = useJsApiLoader({
-    id: 'google-map-script',
-    language: 'ja',
-    region: 'JP',
-    googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY as string,
-  });
-
-  const onClick = async (e: google.maps.MapMouseEvent) => {
-    const latLng = e.latLng?.toJSON();
+  const onClick = async (e: MapMouseEvent) => {
+    const latLng = { lat: e.detail.latLng?.lat, lng: e.detail.latLng?.lng };
+    console.log(latLng);
     await fetch('/api/map2idol', {
       method: 'POST',
       body: JSON.stringify(latLng),
@@ -62,7 +56,6 @@ const Maps = (): ReactElement => {
         <Pane marginX="auto" width={960}>
           <Pane marginY={10}>
             <MapsComponent
-              isLoaded={isLoaded}
               initPosition={initPosition}
               onClick={onClick}
               center={center}

@@ -1,8 +1,8 @@
-.circleci
 .vscode
 
 .next
 .pnp.*
+pnpm-lock.yaml
 
 *.json
 
