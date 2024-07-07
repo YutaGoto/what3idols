@@ -1,11 +1,10 @@
-import { GoogleMap, InfoWindow } from '@react-google-maps/api';
+import { Map, InfoWindow, MapMouseEvent } from '@vis.gl/react-google-maps';
 
 import { LatLng } from '../../types/Type';
 
 interface MapsProps {
-  isLoaded: boolean;
   initPosition: LatLng;
-  onClick: (e: google.maps.MapMouseEvent) => void;
+  onClick: (e: MapMouseEvent) => void;
   center: LatLng;
   content: string;
 }
@@ -15,24 +14,14 @@ const containerStyle = {
   height: '60vh',
 };
 
-const MapsComponent = ({ isLoaded, initPosition, onClick, center, content }: MapsProps) => {
+const MapsComponent = ({ initPosition, onClick, center, content }: MapsProps) => {
   return (
     <div>
-      {isLoaded && (
-        <GoogleMap
-          mapContainerStyle={containerStyle}
-          zoom={10}
-          center={initPosition}
-          onClick={onClick}
-          options={{
-            mapId: process.env.GOOGLE_MAPS_MAP_ID,
-          }}
-        >
-          <InfoWindow position={center}>
-            <p>{content}</p>
-          </InfoWindow>
-        </GoogleMap>
-      )}
+      <Map style={containerStyle} defaultZoom={10} defaultCenter={initPosition} onClick={onClick}>
+        <InfoWindow position={center}>
+          <p>{content}</p>
+        </InfoWindow>
+      </Map>
     </div>
   );
 };

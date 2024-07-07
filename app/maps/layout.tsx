@@ -1,5 +1,6 @@
 import React, { ReactNode } from 'react';
 
+import { MapApiProvider } from '../../providers/MapApiProvider';
 import { RootProvider } from '../../providers/ThemeProvider';
 
 export default function Layout({ children }: { children: ReactNode }) {
@@ -9,7 +10,9 @@ export default function Layout({ children }: { children: ReactNode }) {
         <title>What3Idols</title>
       </head>
       <body>
-        <RootProvider>{children}</RootProvider>
+        <RootProvider>
+          <MapApiProvider>{children}</MapApiProvider>
+        </RootProvider>
       </body>
     </html>
   );
