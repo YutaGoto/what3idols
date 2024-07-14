@@ -1,6 +1,7 @@
 import { Pane } from 'evergreen-ui';
 import Image from 'next/image';
-import { FC } from 'react';
+
+import type { FC } from 'react';
 
 const Header: FC = () => {
   return (

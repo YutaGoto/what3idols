@@ -1,6 +1,6 @@
 import { Map, InfoWindow, MapMouseEvent } from '@vis.gl/react-google-maps';
 
-import { LatLng } from '../../types/Type';
+import type { LatLng } from '../../types/Type';
 
 interface MapsProps {
   initPosition: LatLng;

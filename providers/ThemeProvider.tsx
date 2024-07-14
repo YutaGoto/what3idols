@@ -1,7 +1,7 @@
 'use client';
 
 import { ThemeProvider, defaultTheme, mergeTheme } from 'evergreen-ui';
-import { ReactNode } from 'react';
+import type { ReactNode } from 'react';
 
 interface Props {
   children: ReactNode;
