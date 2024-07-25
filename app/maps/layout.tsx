@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react';
+import { ReactNode } from 'react';
 
 import { MapApiProvider } from '../../providers/MapApiProvider';
 import { RootProvider } from '../../providers/ThemeProvider';

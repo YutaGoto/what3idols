@@ -6,7 +6,8 @@ import { ReactElement, useState } from 'react';
 
 import { Layout, Meta } from '../../components';
 import MapsComponent from '../../components/pages/Maps';
-import { LatLng } from '../../types/Type';
+
+import type { LatLng } from '../../types/Type';
 
 const Maps = (): ReactElement => {
   const [content, setContent] = useState<string>('');
