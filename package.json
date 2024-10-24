@@ -26,7 +26,7 @@
   "devDependencies": {
     "@types/google.maps": "^3.55.11",
     "@types/node": "^20.14.9",
-    "@types/prettier": "^2.7.3",
+    "@types/prettier": "^3.0.0",
     "@types/react": "^18.3.3",
     "@typescript-eslint/eslint-plugin": "^6.21.0",
     "@typescript-eslint/parser": "^6.21.0",
@@ -39,7 +39,7 @@
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-react": "^7.34.3",
     "eslint-plugin-unused-imports": "^3.2.0",
-    "prettier": "^2.8.8",
+    "prettier": "^3.0.0",
     "typescript": "^5.5.3",
     "vercel": "^37.0.0"
   }
