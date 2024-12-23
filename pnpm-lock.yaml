@@ -44,7 +44,7 @@ importers:
         version: 3.55.12
       '@types/node':
         specifier: ^20.14.9
-        version: 20.17.6
+        version: 20.17.10
       '@types/prettier':
         specifier: ^2.7.3
         version: 2.7.3
@@ -342,8 +342,8 @@ packages:
   '@types/node@16.18.11':
     resolution: {integrity: sha512-3oJbGBUWuS6ahSnEq1eN2XrCyf4YsWI8OyCvo7c64zQJNplk3mO84t53o8lfTk+2ji59g5ycfc6qQ3fdHliHuA==}
 
-  '@types/node@20.17.6':
-    resolution: {integrity: sha512-VEI7OdvK2wP7XHnsuXbAJnEpEkF6NjSN45QJlL4VGqZSXsnicpesdTWsg9RISeSdYd3yeRj/y3k5KGjUXYnFwQ==}
+  '@types/node@20.17.10':
+    resolution: {integrity: sha512-/jrvh5h6NXhEauFFexRin69nA0uHJ5gwk4iDivp/DeoEua3uwCUto6PC86IpRITBOs4+6i2I56K5x5b6WYGXHA==}
 
   '@types/prettier@2.7.3':
     resolution: {integrity: sha512-+68kP9yzs4LMp7VNh8gdzMSPZFL44MLGqiHWvttYJe+6qnuVr4Ek9wSBQoveqY/r+LwjCcU29kNVkidwim+kYA==}
@@ -2849,7 +2849,7 @@ snapshots:
 
   '@types/node@16.18.11': {}
 
-  '@types/node@20.17.6':
+  '@types/node@20.17.10':
     dependencies:
       undici-types: 6.19.8
 
@@ -2869,7 +2869,7 @@ snapshots:
   '@types/request@2.48.12':
     dependencies:
       '@types/caseless': 0.12.5
-      '@types/node': 20.17.6
+      '@types/node': 20.17.10
       '@types/tough-cookie': 4.0.5
       form-data: 2.5.1
 
